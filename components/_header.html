@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Umusic | Navbar</title>
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Umusic - Bootstrap E-commerce Template" />
+  <meta name="keywords"
+    content="bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean" />
+  <meta name="author" content="Createx Studio" />
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="mask-icon" color="#fe6a6a" href="../safari-pinned-tab.svg" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+  <link rel="stylesheet" media="screen" href="../vendor/simplebar/dist/simplebar.min.css" />
+  <link rel="stylesheet" media="screen" href="../vendor/tiny-slider/dist/tiny-slider.css" />
+  <link rel="stylesheet" media="screen" href="../vendor/prismjs/themes/prism.css" />
+  <link rel="stylesheet" media="screen" href="../vendor/prismjs/plugins/toolbar/prism-toolbar.css" />
+  <link rel="stylesheet" media="screen" href="../vendor/prismjs/plugins/line-numbers/prism-line-numbers.css" />
+  <!-- Main Theme Styles + Bootstrap-->
+  <!-- <link rel="stylesheet" media="screen" href="../css/theme.min.css"> -->
+  <link rel="stylesheet" media="screen" href="../scss/theme.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- Body-->
+
+<body class="bg-dark">
+
+  <!--===============Music===============-->
+  <div class="container-fluid">
+    <div id="listSong01" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    </div>
+    <script>
+      let itemSong ="", i;
+      for (i=1; i<=4; i++) {
+        itemSong += "<div class='col'>";
+          itemSong += "<!-- Image on top -->" ;
+          itemSong += "<a href='#' class='card border-0'>";
+            itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='card-img-top rounded-0' alt='Card image'>";
+            itemSong += "<div class='card-body p-2'>";
+              itemSong += "<p class='text-truncate-multi m-0'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album </p>";
+            itemSong += "</div>";
+          itemSong += "</a>";
+        itemSong += "</div>";
+      }
+      document.getElementById("listSong01").innerHTML = itemSong;
+    </script>
+  </div>
+
+
+  <!--===============Menu-left===============-->
+  <div class="bg-dark">
+    <!-- List 01 -->
+    <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4 ">
+      <ul id="listMenuLeft01" class="widget-list">
+        <script>
+          let itemMenuLeft ="", x;
+          let listIcon = ['ci-basket','ci-bluetooth-circle','ci-battery','ci-camera'];
+          for (x=1; x<=4; x++) {
+            x === 2 ? acitveItem = 'active' : acitveItem = '';
+            itemMenuLeft += "<li class='widget-list-item "+acitveItem+"'>";
+              itemMenuLeft += "<a class='widget-list-link' href='#'>";
+                itemMenuLeft += "<i class='"+listIcon[x-1]+" text-muted me-2'></i>";
+                itemMenuLeft += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
+              itemMenuLeft += "</a>";
+            itemMenuLeft += "</li>";
+          }
+          document.getElementById("listMenuLeft01").innerHTML = itemMenuLeft;
+        </script>
+      </ul>
+    </div>
+
+    <!-- List 02 -->
+    <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4">
+      <ul id="listMenuLeft02" class="widget-list">
+        <script>
+          let itemMenuLeft02 ="", y;
+          let listIcon02 = ['ci-bookmark','ci-card','ci-clip','ci-cloud-check'];
+
+          for (y=1; y<=4; y++) {
+            y === 3 ? acitveItem02 = 'active' : acitveItem02 = '';
+            itemMenuLeft02 += "<li class='widget-list-item "+acitveItem02+"'>";
+              itemMenuLeft02 += "<a class='widget-list-link' href='#'>";
+                itemMenuLeft02 += "<i class='"+listIcon02[y-1]+" text-muted me-2'></i>";
+                itemMenuLeft02 += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
+              itemMenuLeft02 += "</a>";
+            itemMenuLeft02 += "</li>";
+          }
+          document.getElementById("listMenuLeft02").innerHTML = itemMenuLeft02;
+        </script>
+      </ul>
+    </div>
+
+  </div>
+
+  <!--===============Header===============-->
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Button -->
+      <button type="button" class="btn btn-dark rounded-pill btn-icon">
+        <i class="ci-arrow-left"></i>
+      </button>
+      <button type="button" class="btn btn-dark rounded-pill btn-icon">
+        <i class="ci-arrow-right"></i>
+      </button>
+
+      <!-- Search -->
+      <div class="input-group d-none d-lg-flex flex-nowrap mx-4">
+        <i class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
+        <input class="form-control ps-5 rounded-pill" type="text" placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
+      </div>
+
+      <!-- Admin toolbar -->
+      <div class="navbar-toolbar d-flex align-items-center">
+        <a href="#" class="btn btn-sm link-light me-2">Đăng ký</a>
+        <a href="#" class="btn btn-light btn-sm rounded-pill">Đăng nhập</a>
+
+        <!-- Dropdown -->
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cài đặt
+          </button>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Action</a>
+            <a href="#" class="dropdown-item">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Something else here</a>
+          </div>
+        </div>
+
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Username
+          </button>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Action</a>
+            <a href="#" class="dropdown-item">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Something else here</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor scrits: js libraries and plugins-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/simplebar/dist/simplebar.min.js"></script>
+  <script src="../vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+  <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="../vendor/prismjs/components/prism-core.min.js"></script>
+  <script src="../vendor/prismjs/components/prism-markup.min.js"></script>
+  <script src="../vendor/prismjs/components/prism-clike.min.js"></script>
+  <script src="../vendor/prismjs/components/prism-javascript.min.js"></script>
+  <script src="../vendor/prismjs/components/prism-pug.min.js"></script>
+  <script src="../vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="../vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="../vendor/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <!-- Main theme script-->
+  <script src="../js/theme.min.js"></script>
+</body>
+
+</html>
