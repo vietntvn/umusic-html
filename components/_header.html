@@ -35,26 +35,52 @@
 
 <body class="bg-dark">
 
-  <!--===============Music===============-->
-  <div class="container-fluid">
-    <div id="listSong01" class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+  <section class="container pb-5 mb-lg-3">
+    <!-- Heading-->
+    <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+      <h2 class="f-title mb-0 pt-3 me-2">The most recent releases</h2>
+      <div class="pt-3">
+        <a href="#" class="l-more f-base">Tất cả</a>
+      </div>
     </div>
-    <script>
-      let itemSong ="", i;
-      for (i=1; i<=4; i++) {
-        itemSong += "<div class='col'>";
-          itemSong += "<!-- Image on top -->" ;
-          itemSong += "<a href='#' class='card border-0'>";
-            itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='card-img-top rounded-0' alt='Card image'>";
-            itemSong += "<div class='card-body p-2'>";
-              itemSong += "<p class='text-truncate-multi m-0'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album </p>";
-            itemSong += "</div>";
-          itemSong += "</a>";
-        itemSong += "</div>";
-      }
-      document.getElementById("listSong01").innerHTML = itemSong;
-    </script>
-  </div>
+    <!-- Grid-->
+    <div id="listSong01" class="row pt-3 mx-n2">
+      <!-- Product-->
+      <script>
+        let itemSong = "", i;
+        for (i = 1; i <= 4; i++) {
+          itemSong += "<div class='col-lg-3 col-md-4 col-sm-6 px-2 mb-grid-gutter'>";
+          itemSong += "<div class='card product-card-alt'>";
+          itemSong += "<div class='product-thumb'>";
+          itemSong += "<div class='position-relative w-100'>";
+          itemSong += "<div class='product-card-actions'>";
+          itemSong += "<a class='btn btn-light btn-icon btn-shadow fs-base mx-2' href='#'><i class='ci-eye'></i></a>";
+          itemSong += "<button class='btn btn-light btn-icon btn-shadow fs-base mx-2' type='button'><i class='ci-cart'></i></button>";
+          itemSong += "<a class='btn btn-light btn-icon btn-shadow fs-base mx-2' href='#'><i class='ci-eye'></i></a>";
+          itemSong += "</div>";
+          itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
+          itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='shadow rounded w-100' alt='Product'>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+          itemSong += "<div class='card-body py-0'>";
+          itemSong += "<h3 class='product-title fs-sm mb-2'>";
+          itemSong += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+          itemSong += "</h3>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+        }
+        document.getElementById("listSong01").innerHTML = itemSong;
+      </script>
+    </div>
+    <!-- More button-->
+    <div class="text-center"><a class="btn rounded-pill btn-outline-light" href="#">View more products<i
+          class="ci-arrow-right fs-ms ms-1"></i></a></div>
+  </section>
+
+  <!--===============Music===============-->
+
 
 
   <!--===============Menu-left===============-->
@@ -63,15 +89,15 @@
     <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4 ">
       <ul id="listMenuLeft01" class="widget-list">
         <script>
-          let itemMenuLeft ="", x;
-          let listIcon = ['ci-basket','ci-bluetooth-circle','ci-battery','ci-camera'];
-          for (x=1; x<=4; x++) {
+          let itemMenuLeft = "", x;
+          let listIcon = ['ci-basket', 'ci-bluetooth-circle', 'ci-battery', 'ci-camera'];
+          for (x = 1; x <= 4; x++) {
             x === 2 ? acitveItem = 'active' : acitveItem = '';
-            itemMenuLeft += "<li class='widget-list-item "+acitveItem+"'>";
-              itemMenuLeft += "<a class='widget-list-link' href='#'>";
-                itemMenuLeft += "<i class='"+listIcon[x-1]+" text-muted me-2'></i>";
-                itemMenuLeft += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
-              itemMenuLeft += "</a>";
+            itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
+            itemMenuLeft += "<a class='widget-list-link' href='#'>";
+            itemMenuLeft += "<i class='" + listIcon[x - 1] + " text-muted me-2'></i>";
+            itemMenuLeft += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
+            itemMenuLeft += "</a>";
             itemMenuLeft += "</li>";
           }
           document.getElementById("listMenuLeft01").innerHTML = itemMenuLeft;
@@ -83,16 +109,16 @@
     <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4">
       <ul id="listMenuLeft02" class="widget-list">
         <script>
-          let itemMenuLeft02 ="", y;
-          let listIcon02 = ['ci-bookmark','ci-card','ci-clip','ci-cloud-check'];
+          let itemMenuLeft02 = "", y;
+          let listIcon02 = ['ci-bookmark', 'ci-card', 'ci-clip', 'ci-cloud-check'];
 
-          for (y=1; y<=4; y++) {
+          for (y = 1; y <= 4; y++) {
             y === 3 ? acitveItem02 = 'active' : acitveItem02 = '';
-            itemMenuLeft02 += "<li class='widget-list-item "+acitveItem02+"'>";
-              itemMenuLeft02 += "<a class='widget-list-link' href='#'>";
-                itemMenuLeft02 += "<i class='"+listIcon02[y-1]+" text-muted me-2'></i>";
-                itemMenuLeft02 += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
-              itemMenuLeft02 += "</a>";
+            itemMenuLeft02 += "<li class='widget-list-item " + acitveItem02 + "'>";
+            itemMenuLeft02 += "<a class='widget-list-link' href='#'>";
+            itemMenuLeft02 += "<i class='" + listIcon02[y - 1] + " text-muted me-2'></i>";
+            itemMenuLeft02 += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
+            itemMenuLeft02 += "</a>";
             itemMenuLeft02 += "</li>";
           }
           document.getElementById("listMenuLeft02").innerHTML = itemMenuLeft02;
@@ -126,7 +152,8 @@
 
         <!-- Dropdown -->
         <div class="btn-group dropdown">
-          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Cài đặt
           </button>
           <div class="dropdown-menu">
@@ -138,7 +165,8 @@
         </div>
 
         <div class="btn-group dropdown">
-          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-light btn-sm rounded-pill dropdown-toggle" data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Username
           </button>
           <div class="dropdown-menu">
