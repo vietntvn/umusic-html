@@ -35,114 +35,22 @@
 
 <body class="bg-dark">
 
-
-  <section class="container pb-5 mb-lg-3">
-    <!-- Heading-->
-    <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-      <h2 class="f-title mb-0 pt-3 me-2">The most recent releases</h2>
-      <div class="pt-3">
-        <a href="#" class="l-more f-base">Tất cả</a>
-      </div>
-    </div>
-    <!-- Grid-->
-    <div id="listSong01" class="row pt-3 mx-n2">
-      <!-- Product-->
-      <script>
-        let itemSong = "", i;
-        for (i = 1; i <= 4; i++) {
-          itemSong += "<div class='col-lg-3 col-md-4 col-sm-6 px-2 mb-grid-gutter'>";
-          itemSong += "<div class='card product-card-alt'>";
-          itemSong += "<div class='product-thumb'>";
-          itemSong += "<div class='position-relative w-100'>";
-          itemSong += "<div class='product-card-actions'>";
-          itemSong += "<a class='btn btn-light btn-icon btn-shadow fs-base mx-2' href='#'><i class='ci-eye'></i></a>";
-          itemSong += "<button class='btn btn-light btn-icon btn-shadow fs-base mx-2' type='button'><i class='ci-cart'></i></button>";
-          itemSong += "<a class='btn btn-light btn-icon btn-shadow fs-base mx-2' href='#'><i class='ci-eye'></i></a>";
-          itemSong += "</div>";
-          itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
-          itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='shadow rounded w-100' alt='Product'>";
-          itemSong += "</div>";
-          itemSong += "</div>";
-          itemSong += "<div class='card-body py-0'>";
-          itemSong += "<h3 class='product-title fs-sm mb-2'>";
-          itemSong += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
-          itemSong += "</h3>";
-          itemSong += "</div>";
-          itemSong += "</div>";
-          itemSong += "</div>";
-        }
-        document.getElementById("listSong01").innerHTML = itemSong;
-      </script>
-    </div>
-    <!-- More button-->
-    <div class="text-center"><a class="btn rounded-pill btn-outline-light" href="#">View more products<i
-          class="ci-arrow-right fs-ms ms-1"></i></a></div>
-  </section>
-
-  <!--===============Music===============-->
-
-
-
-  <!--===============Menu-left===============-->
-  <div class="bg-dark">
-    <!-- List 01 -->
-    <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4 ">
-      <ul id="listMenuLeft01" class="widget-list">
-        <script>
-          let itemMenuLeft = "", x;
-          let listIcon = ['ci-basket', 'ci-bluetooth-circle', 'ci-battery', 'ci-camera'];
-          for (x = 1; x <= 4; x++) {
-            x === 2 ? acitveItem = 'active' : acitveItem = '';
-            itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
-            itemMenuLeft += "<a class='widget-list-link' href='#'>";
-            itemMenuLeft += "<i class='" + listIcon[x - 1] + " text-muted me-2'></i>";
-            itemMenuLeft += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
-            itemMenuLeft += "</a>";
-            itemMenuLeft += "</li>";
-          }
-          document.getElementById("listMenuLeft01").innerHTML = itemMenuLeft;
-        </script>
-      </ul>
-    </div>
-
-    <!-- List 02 -->
-    <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4">
-      <ul id="listMenuLeft02" class="widget-list">
-        <script>
-          let itemMenuLeft02 = "", y;
-          let listIcon02 = ['ci-bookmark', 'ci-card', 'ci-clip', 'ci-cloud-check'];
-
-          for (y = 1; y <= 4; y++) {
-            y === 3 ? acitveItem02 = 'active' : acitveItem02 = '';
-            itemMenuLeft02 += "<li class='widget-list-item " + acitveItem02 + "'>";
-            itemMenuLeft02 += "<a class='widget-list-link' href='#'>";
-            itemMenuLeft02 += "<i class='" + listIcon02[y - 1] + " text-muted me-2'></i>";
-            itemMenuLeft02 += "<span class='d-inline-block text-truncate align-middle'> Messages </span>";
-            itemMenuLeft02 += "</a>";
-            itemMenuLeft02 += "</li>";
-          }
-          document.getElementById("listMenuLeft02").innerHTML = itemMenuLeft02;
-        </script>
-      </ul>
-    </div>
-
-  </div>
-
   <!--===============Header===============-->
   <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <!-- Button -->
-      <button type="button" class="btn btn-dark rounded-pill btn-icon">
+      <button type="button" class="btn btn-sm rounded-pill btn-nav">
         <i class="ci-arrow-left"></i>
       </button>
-      <button type="button" class="btn btn-dark rounded-pill btn-icon">
+      <button type="button" class="btn btn-sm rounded-pill btn-nav mx-3">
         <i class="ci-arrow-right"></i>
       </button>
 
       <!-- Search -->
-      <div class="input-group d-none d-lg-flex flex-nowrap mx-4">
+      <div class="input-group d-none d-lg-flex flex-nowrap">
         <i class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
-        <input class="form-control ps-5 rounded-pill" type="text" placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
+        <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
+          placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
       </div>
 
       <!-- Admin toolbar -->
@@ -179,6 +87,82 @@
 
       </div>
     </div>
+  </div>
+
+  <!--===============Music===============-->
+  <section class="container-fluid pb-5 mb-lg-3">
+    <!-- Heading-->
+    <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+      <h2 class="size-24 mb-0 pt-3 me-2">Gần đây</h2>
+      <div class="pt-3">
+        <a href="#" class="l-more f-base">Tất cả</a>
+      </div>
+    </div>
+    <!-- Grid-->
+    <div id="listSong01" class="row pt-3 mx-n2">
+      <!-- Product-->
+      <script>
+        let itemSong = "", i;
+        for (i = 1; i <= 10; i++) {
+          itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 mb-grid-gutter'>";
+          itemSong += "<div class='card product-card-alt active-card'>";
+          itemSong += "<div class='product-thumb'>";
+          itemSong += "<div class='position-relative w-100'>";
+          itemSong += "<div class='product-card-actions'>";
+          itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+          itemSong += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+          itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+          itemSong += "</div>";
+          itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
+          itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+          itemSong += "<div class='card-body'>";
+          itemSong += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+          itemSong += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+          itemSong += "</h6>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+          itemSong += "</div>";
+        }
+        document.getElementById("listSong01").innerHTML = itemSong;
+      </script>
+    </div>
+    <!-- More button-->
+    <div class="text-center"><a class="btn rounded-pill btn-outline-light" href="#">View more products<i
+          class="ci-arrow-right fs-ms ms-1"></i></a></div>
+  </section>
+
+  <!--===============Menu-left===============-->
+  <div class="bg-dark">
+    <!-- List 01 -->
+    <div class="widget widget-links widget-light border-bottom border-light mb-4 pb-4 ">
+      <ul id="listMenuLeft" class="widget-list">
+        <script>
+          let itemMenuLeft = "", x, acitveItem;
+          let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
+          let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
+          let borderLine = "";
+          for (x = 1; x <= listIcon.length; x++) {
+
+            x === 1 ? acitveItem = 'active' : acitveItem = '';
+
+            let xx = x % 3;
+            xx === 0 ? borderLine = "<li class='border-bottom border-light my-2'></li>" : borderLine = '';
+
+            itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
+            itemMenuLeft += "<a class='widget-list-link' href='#'>";
+            itemMenuLeft += "<i class='" + listIcon[x - 1] + " me-2'></i>";
+            itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
+            itemMenuLeft += "</a>";
+            itemMenuLeft += "</li>";
+            itemMenuLeft += borderLine;
+          }
+          document.getElementById("listMenuLeft").innerHTML = itemMenuLeft;
+        </script>
+      </ul>
+    </div>
+
   </div>
 
   <!-- Vendor scrits: js libraries and plugins-->

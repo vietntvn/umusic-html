@@ -1,27 +1,28 @@
-$path-to-fonts: "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" !default;
-
-@font-face {
-  font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
-}
-
-body{
-  font-family: 'Inter';
-}
-
 .product-card-alt {
-  background-color: #181818;
-  &:hover, .active-card{
-    background-color: #282828;
-  }
+  background-color: $color-gray-3;
+  @include border-radius;
   .product-thumb {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    padding: 0.625rem;
+    padding: 0.938rem;
+    img{
+      box-shadow: 0 .5rem 1rem rgba($black, .15);
+    }
+  }
+  &:hover, .active-card{
+    background-color: $color-gray-2;
+    box-shadow: 0 1rem 3rem rgba($black, .175);
+    .product-thumb-overlay{
+      display: block;
+    }
+  }
+  .card-body{
+    padding:0 0.938rem 0.938rem!important;
   }
 }
 
 .product-title {
+  height: 2.5rem;
   > a{
     color: $white;
     &:hover{
@@ -31,28 +32,13 @@ body{
   }
 }
 
-.bg-dark{
-  background-color: #121212 !important;
-}
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
-  color: $white;
-}
-
 // Links
-
 .l-more{
-  color: #B3B3B3;
+  color: $color-gray-1;
   &:hover{
     opacity: 0.8;
-    color: #B3B3B3;
+    color: $color-gray-1;
   }
 }
 
-.f-base{
-  font-size: 0.875rem;
-}
 
-.f-title{
-  font-size: 1.5rem;
-}
