@@ -6,17 +6,18 @@
     font-family: 'Inter';
     src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
   }
-  
-  body{
-    font-family: 'Inter';
-    font-size: 0.875rem;
-  }
-  
+
   $color-gray-1: #B3B3B3;
   $color-gray-2: #282828;
   $color-gray-3: #181818;
   $color-gray-4: #121212;
-  $color-primary: #F3903F;
+  $color-primary: #F3903F;  
+  
+  body{
+    font-family: 'Inter';
+    font-size: 0.875rem;
+    background-color: $color-gray-4;
+  }  
   
   @mixin border-radius {
     border-radius: 0.25rem;

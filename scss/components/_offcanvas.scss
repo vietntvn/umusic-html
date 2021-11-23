@@ -73,24 +73,24 @@
 
 // Links widget inside expanded off-canvas body (docs)
 
-.offcanvas-expand .offcanvas-body {
-  .widget-links {
-    margin-left: -$offcanvas-padding-x;
-    .widget-title {
-      padding-left: $offcanvas-padding-x;
-    }
-  }
-  .widget-list-link {
-    padding-left: $offcanvas-padding-x - .125rem;
-    border-left: .125rem solid transparent;
-  }
-  .active > .widget-list-link {
-    border-left-color: $widget-links-dark-active-color;
-  }
-  .widget-light .active > .widget-list-link {
-    border-left-color: $widget-links-light-active-color;
-  }
-}
+// .offcanvas-expand .offcanvas-body {
+//   .widget-links {
+//     margin-left: -$offcanvas-padding-x;
+//     .widget-title {
+//       padding-left: $offcanvas-padding-x;
+//     }
+//   }
+//   .widget-list-link {
+//     padding-left: $offcanvas-padding-x - .125rem;
+//     border-left: .125rem solid transparent;
+//   }
+//   .active > .widget-list-link {
+//     border-left-color: $widget-links-dark-active-color;
+//   }
+//   .widget-light .active > .widget-list-link {
+//     border-left-color: $widget-links-light-active-color;
+//   }
+// }
 
 
 // Sidebar toggle

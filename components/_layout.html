@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Umusic | Navbar</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Umusic - Bootstrap E-commerce Template" />
+    <meta name="keywords"
+        content="bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean" />
+    <meta name="author" content="Createx Studio" />
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="mask-icon" color="#fe6a6a" href="../safari-pinned-tab.svg" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="../scss/theme.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<!-- Body-->
+
+
+<body>
+    <main>
+        <!-- Main content-->
+        <section class="offcanvas-enabled pb-3 pb-md-4">
+            <header class="navbar fixed-top shadow-sm justify-content-start flex-nowrap navbar-dark bg-dark"
+                data-scroll-header data-fixed-element>
+                <div class="container-fluid">
+
+                    <!-- Toogle button -->
+                    <button class="navbar-toggler ms-n3 d-md-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#components-nav"><span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand d-md-none me-2" href="#"><img src="../img/logo.svg" width="100"
+                            alt="Cartzilla"></a>
+
+                    <div class="d-md-flex flex-nowrap">
+                        <!-- Button -->
+                        <div class="d-none d-md-flex flex-nowrap">
+                            <button type="button" class="btn btn-sm rounded-pill btn-nav">
+                                <i class="ci-arrow-left"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm rounded-pill btn-nav mx-3">
+                                <i class="ci-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Collapse -->
+                        <div class="collapse d-none d-md-flex popup-search" id="collapseSearch">
+                            <!-- Search -->
+                            <div class="input-group d-none d-md-flex flex-nowrap">
+                                <i
+                                    class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
+                                <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
+                                    placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Admin toolbar -->
+                    <div class="navbar-toolbar d-flex align-items-center">
+
+                        <!-- Link -->
+                        <div class="d-none d-md-flex flex-nowrap">
+                            <a href="#" class="btn btn-sm link-light me-2">Đăng ký</a>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill">Đăng nhập</a>
+                        </div>
+
+                        <!-- Toggle search (Only mobile)-->
+                        <a href="#collapseSearch" class="navbar-tool d-md-none" data-bs-toggle="collapse" role="button"
+                            aria-expanded="false" aria-controls="collapseSearch">
+                            <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-search"></i></div>
+                        </a>
+
+                        <!-- Dropdown (Only web)-->
+                        <div class="btn-group dropdown ms-md-3">
+
+                            <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button"
+                                    class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
+                                    Cài đặt
+                                </button>
+                            </span>
+
+                            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
+                                <a href="#" class="dropdown-item">Danh sách chặn</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a href="#" class="dropdown-item">Chất lượng nhạc</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a href="#" class="dropdown-item">Trình phát nhạc</a>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Dropdown -->
+                        <div class="btn-group dropdown ms-md-3">
+
+                            <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button"
+                                    class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
+                                    Username
+                                </button>
+                                <a class="navbar-tool d-md-none me-n2" href="#">
+                                    <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-user"></i></div>
+                                </a>
+                            </span>
+
+                            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
+                                <a href="#" class="dropdown-item">Tài khoản</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a href="#" class="dropdown-item">Thông tin chung</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a href="#" class="dropdown-item">Đăng xuất</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Side navigation-->
+            <aside class="offcanvas offcanvas-expand bg-black" id="components-nav">
+
+                <!-- Offcanvas header -->
+                <div class="offcanvas-header bg-transparent">
+                    <a class="navbar-brand py-1" href="">
+                        <img src="../img/logo.svg" width="132">
+                    </a>
+                    <button class="btn-close btn-close-white d-md-none mt-n2" type="button" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <!-- Offcanvas body -->
+                <div class="offcanvas-body py-0" data-simplebar data-simplebar-auto-hide="true">
+                    <div class="widget widget-links widget-light mb-4 pb-4">
+                        <!-- List 01 -->
+                        <ul id="listMenuLeft" class="widget-list">
+                            <script>
+                                let itemMenuLeft = "", x, acitveItem;
+                                let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
+                                let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
+                                let borderLine = "";
+                                let vipImage = "";
+                                let urlImage = "../img/vip.png";
+                                for (x = 1; x <= listIcon.length; x++) {
+
+                                    //Set active
+                                    x === 1 ? acitveItem = 'active' : acitveItem = '';
+
+                                    //Set border
+                                    let xx = x % 3;
+                                    xx === 0 ? borderLine = "<li class='border-bottom border-light my-2'></li>" : borderLine = '';
+
+                                    //Set image
+                                    let lastItem = listIcon.length - 1;
+                                    x === lastItem ? vipImage = "<li class='my-3'><a href='#'><img src='" + urlImage + "'></a></li>" : vipImage = '';
+
+                                    itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
+                                    itemMenuLeft += "<a class='widget-list-link' href='#'>";
+                                    itemMenuLeft += "<i class='" + listIcon[x - 1] + " me-2'></i>";
+                                    itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
+                                    itemMenuLeft += "</a>";
+                                    itemMenuLeft += "</li>";
+                                    itemMenuLeft += vipImage;
+                                    itemMenuLeft += borderLine;
+                                }
+                                document.getElementById("listMenuLeft").innerHTML = itemMenuLeft;
+                            </script>
+                        </ul>
+
+                        <!-- List 02 (Only mobile)-->
+                        <ul class="widget-list d-md-none">
+                            <li class="widget-list-item">
+                                <a class="widget-list-link" href="#"><span class="text-truncate">
+                                        Danh sách chặn </span></a>
+                            </li>
+                            <li class="widget-list-item">
+                                <a class="widget-list-link" href="#"><span class="text-truncate">
+                                        Chất lượng nhạc </span></a>
+                            </li>
+                            <li class="widget-list-item">
+                                <a class="widget-list-link" href="#"><span class="text-truncate">
+                                        Trình phát nhạc </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Basic example-->
+            <div class="mt-5"></div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">Gần đây</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong01" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong = "", i;
+                        for (i = 1; i <= 6; i++) {
+                            itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong += "<div class='card product-card-alt active-card'>";
+                            itemSong += "<div class='product-thumb'>";
+                            itemSong += "<div class='position-relative w-100'>";
+                            itemSong += "<div class='product-card-actions'>";
+                            itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong += "</div>";
+                            itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'>";
+                            itemSong += "</div>";
+                            itemSong += "</div>";
+                            itemSong += "<div class='card-body'>";
+                            itemSong += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong += "</h6>";
+                            itemSong += "</div>";
+                            itemSong += "</div>";
+                            itemSong += "</div>";
+                        }
+                        document.getElementById("listSong01").innerHTML = itemSong;
+                    </script>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">Có thể bạn muốn nghe</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong02" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong02 = "", a;
+                        for (a = 1; a <= 6; a++) {
+                            itemSong02 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong02 += "<div class='card product-card-alt active-card'>";
+                            itemSong02 += "<div class='product-thumb'>";
+                            itemSong02 += "<div class='position-relative w-100'>";
+                            itemSong02 += "<div class='product-card-actions'>";
+                            itemSong02 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong02 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong02 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong02 += "</div>";
+                            itemSong02 += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong02 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
+                            itemSong02 += "</div>";
+                            itemSong02 += "</div>";
+                            itemSong02 += "<div class='card-body'>";
+                            itemSong02 += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong02 += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong02 += "</h6>";
+                            itemSong02 += "</div>";
+                            itemSong02 += "</div>";
+                            itemSong02 += "</div>";
+                        }
+                        document.getElementById("listSong02").innerHTML = itemSong02;
+                    </script>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">US - UK</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong03" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong03 = "", b;
+                        for (b = 1; b <= 6; b++) {
+                            itemSong03 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong03 += "<div class='card product-card-alt active-card'>";
+                            itemSong03 += "<div class='product-thumb'>";
+                            itemSong03 += "<div class='position-relative w-100'>";
+                            itemSong03 += "<div class='product-card-actions'>";
+                            itemSong03 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong03 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong03 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong03 += "</div>";
+                            itemSong03 += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong03 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
+                            itemSong03 += "</div>";
+                            itemSong03 += "</div>";
+                            itemSong03 += "<div class='card-body'>";
+                            itemSong03 += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong03 += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong03 += "</h6>";
+                            itemSong03 += "</div>";
+                            itemSong03 += "</div>";
+                            itemSong03 += "</div>";
+                        }
+                        document.getElementById("listSong03").innerHTML = itemSong03;
+                    </script>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">Hôm nay có gì</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong04" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong04 = "", c;
+                        for (c = 1; c <= 6; c++) {
+                            itemSong04 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong04 += "<div class='card product-card-alt active-card'>";
+                            itemSong04 += "<div class='product-thumb'>";
+                            itemSong04 += "<div class='position-relative w-100'>";
+                            itemSong04 += "<div class='product-card-actions'>";
+                            itemSong04 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong04 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong04 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong04 += "</div>";
+                            itemSong04 += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong04 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
+                            itemSong04 += "</div>";
+                            itemSong04 += "</div>";
+                            itemSong04 += "<div class='card-body'>";
+                            itemSong04 += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong04 += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong04 += "</h6>";
+                            itemSong04 += "</div>";
+                            itemSong04 += "</div>";
+                            itemSong04 += "</div>";
+                        }
+                        document.getElementById("listSong04").innerHTML = itemSong04;
+                    </script>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">Sôi động cùng EDM</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong05" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong05 = "", d;
+                        for (d = 1; d <= 6; d++) {
+                            itemSong05 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong05 += "<div class='card product-card-alt active-card'>";
+                            itemSong05 += "<div class='product-thumb'>";
+                            itemSong05 += "<div class='position-relative w-100'>";
+                            itemSong05 += "<div class='product-card-actions'>";
+                            itemSong05 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong05 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong05 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong05 += "</div>";
+                            itemSong05 += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong05 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
+                            itemSong05 += "</div>";
+                            itemSong05 += "</div>";
+                            itemSong05 += "<div class='card-body'>";
+                            itemSong05 += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong05 += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong05 += "</h6>";
+                            itemSong05 += "</div>";
+                            itemSong05 += "</div>";
+                            itemSong05 += "</div>";
+                        }
+                        document.getElementById("listSong05").innerHTML = itemSong05;
+                    </script>
+                </div>
+            </div>
+
+            <!-- SESSION -->
+            <div class="container-fluid pb-1">
+                <!-- Heading-->
+                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
+                    <h2 class="size-24 mb-0 pt-3 me-2">Hit marker</h2>
+                    <div class="pt-3">
+                        <a href="#" class="l-more f-base">TẤT CẢ</a>
+                    </div>
+                </div>
+                <!-- Grid-->
+                <div id="listSong03" class="row pt-3 mx-n2">
+                    <!-- Product-->
+                    <script>
+                        let itemSong06 = "", z;
+                        for (z = 1; z <= 6; z++) {
+                            itemSong06 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
+                            itemSong06 += "<div class='card product-card-alt active-card'>";
+                            itemSong06 += "<div class='product-thumb'>";
+                            itemSong06 += "<div class='position-relative w-100'>";
+                            itemSong06 += "<div class='product-card-actions'>";
+                            itemSong06 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
+                            itemSong06 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
+                            itemSong06 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
+                            itemSong06 += "</div>";
+                            itemSong06 += "<a class='product-thumb-overlay rounded' href='#'></a>";
+                            itemSong06 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
+                            itemSong06 += "</div>";
+                            itemSong06 += "</div>";
+                            itemSong06 += "<div class='card-body'>";
+                            itemSong06 += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
+                            itemSong06 += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
+                            itemSong06 += "</h6>";
+                            itemSong06 += "</div>";
+                            itemSong06 += "</div>";
+                            itemSong06 += "</div>";
+                        }
+                        document.getElementById("listSong03").innerHTML = itemSong06;
+                    </script>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- Main theme script-->
+    <script src="../js/theme.min.js"></script>
+</body>
+
+</html>
