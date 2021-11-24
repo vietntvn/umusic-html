@@ -29,10 +29,12 @@
 <!-- Body-->
 
 
+
 <body>
   <main>
     <!-- Main content-->
     <section class="offcanvas-enabled pb-3 pb-md-4">
+
       <header class="navbar fixed-top shadow-sm justify-content-start flex-nowrap navbar-dark bg-dark"
         data-scroll-header data-fixed-element>
         <div class="container-fluid">
@@ -42,7 +44,7 @@
             data-bs-target="#components-nav"><span class="navbar-toggler-icon"></span>
           </button>
 
-          <a class="navbar-brand d-md-none me-2" href="#"><img src="img/logo.svg" width="100" alt="Cartzilla"></a>
+          <a class="navbar-brand d-md-none me-0 me-md-2" href="#"><img src="img/logo.svg" alt="Umusic"></a>
 
           <div class="d-md-flex flex-nowrap">
             <!-- Button -->
@@ -56,13 +58,18 @@
             </div>
 
             <!-- Collapse -->
-            <div class="collapse d-none d-md-flex popup-search" id="collapseSearch">
+            <div class="collapse popup-search" id="collapseSearch">
               <!-- Search -->
-              <div class="input-group d-none d-md-flex flex-nowrap">
+              <div class="input-group">
                 <i class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
                 <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
                   placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
               </div>
+              <!-- Toggle search (Only mobile)-->
+              <a href="#collapseSearch" class="navbar-tool d-md-none ms-3" data-bs-toggle="collapse" role="button"
+                aria-expanded="false" aria-controls="collapseSearch">
+                <i class="ci-close"></i>
+              </a>
             </div>
           </div>
 
@@ -200,11 +207,12 @@
       <!-- Basic example-->
       <div class="mt-5 pt-3"></div>
 
+
       <!-- SESSION -->
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">Gần đây</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">Gần đây</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -220,12 +228,15 @@
               itemSong += "<div class='product-thumb'>";
               itemSong += "<div class='position-relative w-100'>";
               itemSong += "<div class='product-card-actions'>";
+              itemSong += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong += "<i class='ci-u-triangle'></i>";
+              itemSong += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong += "</button>";
               itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong += "</div>";
               itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
-              itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'>";
+              itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'/>";
               itemSong += "</div>";
               itemSong += "</div>";
               itemSong += "<div class='card-body'>";
@@ -245,7 +256,7 @@
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">Có thể bạn muốn nghe</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">Có thể bạn muốn nghe</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -261,9 +272,12 @@
               itemSong02 += "<div class='product-thumb'>";
               itemSong02 += "<div class='position-relative w-100'>";
               itemSong02 += "<div class='product-card-actions'>";
+              itemSong02 += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong02 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong02 += "<i class='ci-u-triangle'></i>";
+              itemSong02 += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong02 += "</button>";
               itemSong02 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong02 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong02 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong02 += "</div>";
               itemSong02 += "<a class='product-thumb-overlay rounded' href='#'></a>";
               itemSong02 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
@@ -286,7 +300,7 @@
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">US - UK</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">US - UK</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -302,9 +316,12 @@
               itemSong03 += "<div class='product-thumb'>";
               itemSong03 += "<div class='position-relative w-100'>";
               itemSong03 += "<div class='product-card-actions'>";
+              itemSong03 += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong03 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong03 += "<i class='ci-u-triangle'></i>";
+              itemSong03 += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong03 += "</button>";
               itemSong03 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong03 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong03 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong03 += "</div>";
               itemSong03 += "<a class='product-thumb-overlay rounded' href='#'></a>";
               itemSong03 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
@@ -327,7 +344,7 @@
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">Hôm nay có gì</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">Hôm nay có gì</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -343,9 +360,12 @@
               itemSong04 += "<div class='product-thumb'>";
               itemSong04 += "<div class='position-relative w-100'>";
               itemSong04 += "<div class='product-card-actions'>";
+              itemSong04 += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong04 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong04 += "<i class='ci-u-triangle'></i>";
+              itemSong04 += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong04 += "</button>";
               itemSong04 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong04 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong04 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong04 += "</div>";
               itemSong04 += "<a class='product-thumb-overlay rounded' href='#'></a>";
               itemSong04 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
@@ -368,7 +388,7 @@
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">Sôi động cùng EDM</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">Sôi động cùng EDM</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -384,9 +404,12 @@
               itemSong05 += "<div class='product-thumb'>";
               itemSong05 += "<div class='position-relative w-100'>";
               itemSong05 += "<div class='product-card-actions'>";
+              itemSong05 += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong05 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong05 += "<i class='ci-u-triangle'></i>";
+              itemSong05 += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong05 += "</button>";
               itemSong05 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong05 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong05 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong05 += "</div>";
               itemSong05 += "<a class='product-thumb-overlay rounded' href='#'></a>";
               itemSong05 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";
@@ -409,7 +432,7 @@
       <div class="container-fluid pb-4">
         <!-- Heading-->
         <div class="d-flex flex-wrap justify-content-between align-items-center pt-1">
-          <h2 class="size-24 mb-0 pt-3 me-2">Hit marker</h2>
+          <h2 class="size-24 fw-bold mb-0 pt-3 me-2">Hit marker</h2>
           <div class="pt-3">
             <a href="#" class="l-more f-base">TẤT CẢ</a>
           </div>
@@ -425,9 +448,12 @@
               itemSong06 += "<div class='product-thumb'>";
               itemSong06 += "<div class='position-relative w-100'>";
               itemSong06 += "<div class='product-card-actions'>";
+              itemSong06 += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+              itemSong06 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
+              itemSong06 += "<i class='ci-u-triangle'></i>";
+              itemSong06 += "<img src='img/u-pause-sign.svg' width='15px'/>";
+              itemSong06 += "</button>";
               itemSong06 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-              itemSong06 += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3'><i class='ci-u-triangle'></i></button>";
-              itemSong06 += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-like-outline size-24'></i></a>";
               itemSong06 += "</div>";
               itemSong06 += "<a class='product-thumb-overlay rounded' href='#'></a>";
               itemSong06 += "<img src='https://picsum.photos/seed/picsum/300' class='rounded w-100' alt='Product'>";

@@ -1,0 +1,48 @@
+.active{
+
+}
+
+.like-toggle{
+    .ci-u-like-outline{
+        display: inline-block;
+    }
+    .ci-u-like-solid{
+        display: none;
+        color: $color-primary;
+    }
+}
+
+.like-toggle.active{
+    .ci-u-like-outline{
+        display: none;
+    }
+
+    .ci-u-like-solid{
+        display: inline-block;
+    }
+}
+
+
+.play-toggle{
+    width: 45px;
+    .ci-u-triangle{
+        display: inline-block;
+        font-size: 18px !important;
+        position: relative;
+    }
+    img{
+        display: none;
+        position: relative;
+        top:-1px;
+    }
+}
+
+.play-toggle.active{
+    .ci-u-triangle{
+        display: none;
+    }
+
+    img{
+        display: inline-block;
+    }
+}

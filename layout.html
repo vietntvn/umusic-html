@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Umusic | Navbar</title>
+    <title>Umusic</title>
     <!-- SEO Meta Tags-->
     <meta name="description" content="Umusic - Bootstrap E-commerce Template" />
     <meta name="keywords"
@@ -12,27 +12,29 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
-    <link rel="manifest" href="../site.webmanifest" />
-    <link rel="mask-icon" color="#fe6a6a" href="../safari-pinned-tab.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
     <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
 
     <!-- Main Theme Styles + Bootstrap-->
-    <link rel="stylesheet" media="screen" href="../scss/theme.css">
+    <link rel="stylesheet" media="screen" href="scss/theme.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <!-- Body-->
+
 
 
 <body>
     <main>
         <!-- Main content-->
         <section class="offcanvas-enabled pb-3 pb-md-4">
+
             <header class="navbar fixed-top shadow-sm justify-content-start flex-nowrap navbar-dark bg-dark"
                 data-scroll-header data-fixed-element>
                 <div class="container-fluid">
@@ -42,8 +44,7 @@
                         data-bs-target="#components-nav"><span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <a class="navbar-brand d-md-none me-2" href="#"><img src="../img/logo.svg" width="100"
-                            alt="Cartzilla"></a>
+                    <a class="navbar-brand d-md-none me-0 me-md-2" href="#"><img src="img/logo.svg" alt="Umusic"></a>
 
                     <div class="d-md-flex flex-nowrap">
                         <!-- Button -->
@@ -57,14 +58,19 @@
                         </div>
 
                         <!-- Collapse -->
-                        <div class="collapse d-none d-md-flex popup-search" id="collapseSearch">
+                        <div class="collapse popup-search" id="collapseSearch">
                             <!-- Search -->
-                            <div class="input-group d-none d-md-flex flex-nowrap">
+                            <div class="input-group">
                                 <i
                                     class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
                                 <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
                                     placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
                             </div>
+                            <!-- Toggle search (Only mobile)-->
+                            <a href="#collapseSearch" class="navbar-tool d-md-none ms-3" data-bs-toggle="collapse"
+                                role="button" aria-expanded="false" aria-controls="collapseSearch">
+                                <i class="ci-close"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -138,7 +144,7 @@
                 <!-- Offcanvas header -->
                 <div class="offcanvas-header bg-transparent">
                     <a class="navbar-brand py-1" href="">
-                        <img src="../img/logo.svg" width="132">
+                        <img src="img/logo.svg" width="132">
                     </a>
                     <button class="btn-close btn-close-white d-md-none mt-n2" type="button" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -155,7 +161,7 @@
                                 let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
                                 let borderLine = "";
                                 let vipImage = "";
-                                let urlImage = "../img/vip.png";
+                                let urlImage = "img/vip.png";
                                 for (x = 1; x <= listIcon.length; x++) {
 
                                     //Set active
@@ -202,20 +208,19 @@
             </aside>
 
             <!-- Basic example-->
-            <div class="mt-5"></div>
+            <div class="mt-5 pt-3"></div>
 
-            <!-- SESSION -->
-            <p>Content</p>
+
 
         </section>
     </main>
 
 
     <!-- Vendor scrits: js libraries and plugins-->
-    <script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <!-- Main theme script-->
-    <script src="../js/theme.min.js"></script>
+    <script src="js/theme.min.js"></script>
 </body>
 
 </html>
