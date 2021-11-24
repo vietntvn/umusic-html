@@ -1,0 +1,80 @@
+.media-img{
+    width: 40px;
+    height: 40px;
+}
+
+.u-table{
+    color: #B3B3B3;
+    a{
+        color: #B3B3B3;
+        &:hover{
+            color: $white;
+        }
+    }
+    .u-heading{
+        border-bottom: 1px solid $color-gray-2;
+        margin-bottom: 0.55rem;
+    }
+    .u-row{
+        @include border-radius;
+        &:hover {
+            background: $color-gray-2;
+        }
+        .vip-lable{
+            background-color: #FED51B;
+            color: #000;
+            font-size: 0.65rem;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            @include border-radius;
+            position:relative;
+            top:-10px;
+            margin-left:10px;
+            display:none;
+        }
+    }
+    .icon-sign{
+        position: relative;
+        margin-left: -5px;
+        display: none;
+    }
+    .u-row.active{
+        background: $color-gray-2;
+        color: $white;
+        a{
+            color: $white;  
+        }
+        .icon-sign{
+            display: inline-block;
+        }
+        .text-number{
+            display: none;
+        }        
+    }
+    .u-row.for-vip{
+        color: rgba($color: $white, $alpha: .35);
+        a{
+            color: rgba($color: $white, $alpha: .35);
+        }
+        .vip-lable{
+            display:inline-block;
+        }        
+    }
+    .u-col{
+        // flex: 0 0 25%;
+        padding: 0.55rem;
+        border-bottom-width: 1px;
+    }
+    .col-01{
+        flex: 0 0 5%;
+    }
+    .col-02{
+        flex: 0 0 45%;
+    }
+    .col-03{
+        flex: 0 0 25%;
+    }
+    .col-04{
+        flex: 0 0 25%;
+    }
+}

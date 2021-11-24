@@ -15305,6 +15305,10 @@ dd {
   content: "\e9f0";
 }
 
+.ci-u-pause-sign:before {
+  content: "\e9f1";
+}
+
 .table:not(.table-dark) thead th, .table:not(.table-dark) tbody th {
   color: #fff !important;
 }
@@ -20626,20 +20630,20 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 .play-toggle .ci-u-triangle {
   display: inline-block;
   font-size: 18px !important;
-  position: relative;
 }
 
-.play-toggle img {
+.play-toggle .ci-u-pause-sign {
   display: none;
+  font-size: 17px !important;
   position: relative;
-  top: -1px;
+  left: -1px;
 }
 
 .play-toggle.active .ci-u-triangle {
   display: none;
 }
 
-.play-toggle.active img {
+.play-toggle.active .ci-u-pause-sign {
   display: inline-block;
 }
 
@@ -20679,5 +20683,112 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 .btn-upgrade:hover {
   color: #000;
   opacity: .65;
+}
+
+.media-img {
+  width: 40px;
+  height: 40px;
+}
+
+.u-table {
+  color: #B3B3B3;
+}
+
+.u-table a {
+  color: #B3B3B3;
+}
+
+.u-table a:hover {
+  color: #fff;
+}
+
+.u-table .u-heading {
+  border-bottom: 1px solid #282828;
+  margin-bottom: 0.55rem;
+}
+
+.u-table .u-row {
+  border-radius: 0.25rem;
+}
+
+.u-table .u-row:hover {
+  background: #282828;
+}
+
+.u-table .u-row .vip-lable {
+  background-color: #FED51B;
+  color: #000;
+  font-size: 0.65rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  border-radius: 0.25rem;
+  position: relative;
+  top: -10px;
+  margin-left: 10px;
+  display: none;
+}
+
+.u-table .icon-sign {
+  position: relative;
+  margin-left: -5px;
+  display: none;
+}
+
+.u-table .u-row.active {
+  background: #282828;
+  color: #fff;
+}
+
+.u-table .u-row.active a {
+  color: #fff;
+}
+
+.u-table .u-row.active .icon-sign {
+  display: inline-block;
+}
+
+.u-table .u-row.active .text-number {
+  display: none;
+}
+
+.u-table .u-row.for-vip {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.u-table .u-row.for-vip a {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.u-table .u-row.for-vip .vip-lable {
+  display: inline-block;
+}
+
+.u-table .u-col {
+  padding: 0.55rem;
+  border-bottom-width: 1px;
+}
+
+.u-table .col-01 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 5%;
+          flex: 0 0 5%;
+}
+
+.u-table .col-02 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+}
+
+.u-table .col-03 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+.u-table .col-04 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
 }
 /*# sourceMappingURL=theme.css.map */
