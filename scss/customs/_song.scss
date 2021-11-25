@@ -42,4 +42,35 @@
   }
 }
 
+.card-link{
+  background: linear-gradient(180deg, #FFA00E 0%, #FE7118 71.77%);
+  flex-direction: row !important;
+  width: 100%;
+  &:hover{
+    opacity: .65;
+  }
+}
+
+.btn-add{
+  background-color: rgba($white, .65);
+  padding: 0.925rem 0.875rem;  
+  .ci-add{
+    font-size: 1.9rem;
+    color: #fff;
+  }
+}
+
+.singer-thumb{
+  .rounded{
+    border-radius: 50% !important;
+  }
+  .product-card-actions{
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+
 

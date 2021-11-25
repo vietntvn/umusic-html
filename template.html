@@ -33,6 +33,72 @@
 <body>
     <main>
 
+        <!-- Header -->
+        <div class="d-flex text-light w-100">
+            <div class="d-flex align-items-end">
+                <div><img src="https://picsum.photos/200" class="rounded"></div>
+                <div class="ps-3">
+                    <div class="h1 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
+                    <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
+                        <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
+                        <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
+                            href="#" class="text-muted">V-Pop</a>; 07/10/2021; 17K yêu thích
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex text-light justify-content-between w-100">
+            <div class="d-flex align-items-start">
+                <div class="pe-3">
+                    <div class="h1 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
+                    <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
+                        <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
+                        <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
+                            href="#" class="text-muted">V-Pop</a>; 07/10/2021; 17K yêu thích
+                    </div>
+                </div>
+                <div><img src="https://picsum.photos/200" class="rounded"></div>
+            </div>
+        </div>
+
+        <!-- Grid-->
+        <div class="container-fluid">
+            <div id="listSong01" class="row pt-3 mx-n2 align-items-stretch">
+                <!-- Product-->
+                <script>
+                    let itemSong = "", i, flagSigner;
+                    let hasLink = false;
+                    let hasSinger = false;
+
+                    // Check singer
+                    hasSinger ? flagSigner = "singer-thumb" : "";
+
+                    let linkItem = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
+                    let contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
+
+                    let selectedItem = "";
+                    let flagLink = "";
+
+                    for (i = 1; i <= 6; i++) {
+                        if (!hasLink) {
+                            i === 1 ? flagLink = "card-link" : flagLink = "";
+                            i === 1 ? selectedItem = linkItem : selectedItem = contentItem;
+                        } else {
+                            flagLink = "";
+                            selectedItem = contentItem;
+                        }
+                        itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
+                        itemSong += "<div class='card product-card-alt " + flagLink + "'>";
+                        itemSong += selectedItem;
+                        itemSong += "</div>";
+                        itemSong += "</div>";
+                    }
+                    document.getElementById("listSong01").innerHTML = itemSong;
+                </script>
+            </div>
+        </div>
+
 
         <!-- Dark table with hoverable rows -->
         <div class="u-table">
@@ -48,25 +114,68 @@
             <!-- listSongTable -->
             <div id="listSongTable">
                 <script>
+
                     let itemSongTable = "", index;
                     let itemPlaying = "";
                     let itemToggle = "";
                     let vipLable = "";
+
+                    // For billboard
+                    let itemUp = "<span class='text-up ci-caret'></span> <span class='text-level'>6</span>";
+                    let itemBalance = "<span class='text-balance'></span> <span class='text-level'>2</span>";
+                    let itemDown = "<span class='text-down ci-caret'></span> <span class='text-level'>1</span>";
+                    let textBillboard;
+                    let textLevel;
+
                     for (index = 0; index < 10; index++) {
 
                         index === 6 ? itemPlaying = "active" : itemPlaying = ""
                         index === 5 ? vipLable = "for-vip" : vipLable = ""
-                        index !== 5 ? itemToggle = " data-bs-toggle='button' " : itemToggle = ""
 
-                        itemSongTable += "<div class='d-flex flex-nowrap justify-content-between align-items-center u-row " + itemPlaying + vipLable + "'" + itemToggle + ">";
+                        // For billboard
+                        index === 0 ? textBillboard = itemUp : textBillboard = itemDown;
+
+                        switch (index) {
+                            case 0:
+                                textLevel = "top-level";
+                                break;
+                            case 1:
+                                textLevel = "second-level";
+                                break;
+                            case 2:
+                                textLevel = "third-level";
+                                break;
+                            default:
+                                textLevel = "";
+                                break;
+                        }
+
+                        if (index === 3 || index === 5 || index === 7) {
+                            textBillboard = itemBalance;
+                        }
+
+                        itemSongTable += "<div class='d-flex flex-nowrap justify-content-between align-items-center u-row " + itemPlaying + vipLable + "'>";
+
                         itemSongTable += "<div class='u-col col-01'>";
+
+                        itemSongTable += "<div class='text-index'>";
                         itemSongTable += "<span class='text-number'>" + (index + 1) + "</span>";
                         itemSongTable += "<span class='icon-sign'>";
-                        itemSongTable += "<i class='ci-u-triangle'></i></span></div>";
+                        itemSongTable += "<i class='ci-u-triangle'></i></span>";
+                        itemSongTable += "</div>";
+
+                        // itemSongTable += "<div class='text-billboard d-flex align-items-center'>";
+                        // itemSongTable += "<span class='text-number-decor d-flex align-items-center justify-content-center fw-bold " + textLevel + "'>" + (index + 1) + "</span>";
+                        // itemSongTable += "<div class='text-gaph ms-3'>" + textBillboard + "</div>";
+                        // itemSongTable += "<span class='icon-sign'>";
+                        // itemSongTable += "<i class='ci-u-triangle'></i></span>";
+                        // itemSongTable += "</div>";
+
+                        itemSongTable += "</div>";
                         itemSongTable += "<div class='u-col col-02'><a href='#'><div class='d-flex align-items-center'>";
                         itemSongTable += "<div class='media-img'><img src='https://picsum.photos/200'></div>";
                         itemSongTable += "<div class='ps-3'>";
-                        itemSongTable += "<div class='fs-md text-nowrap'>Yêu Một Người Gian Dối</div>";
+                        itemSongTable += "<div class='fs-md text-truncate' style='width:100px'>Yêu Một Người Gian Dối</div>";
                         itemSongTable += "<div class='fs-xs'>Như Việt</div></div>";
                         itemSongTable += "<span class='vip-lable'>VIP</span></div></a></div><div class='u-col col-03'>04:05</div><div class='u-col col-04'>";
                         itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-lyrics size-24'></i></a>";
@@ -78,290 +187,255 @@
                 </script>
 
                 <!-- Item -->
-
-
             </div>
 
-            <div class="d-flex flex-nowrap justify-content-between align-items-center">
-                <div>
-                    <button type='button' class='btn btn-warning rounded-pill btn-icon me-3 play-toggle'
-                        data-bs-toggle='button'>
-                        <i class='ci-u-triangle'></i>
-                        <i class='ci-u-pause-sign'></i>
-                    </button>
-                    <a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i
-                            class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>
+        </div>
+
+        <!-- Link Top -->
+        <div class="d-flex flex-nowrap justify-content-between align-items-center">
+            <div>
+                <button type='button' class='btn btn-warning rounded-pill btn-icon me-3 play-toggle'
+                    data-bs-toggle='button'>
+                    <i class='ci-u-triangle'></i>
+                    <i class='ci-u-pause-sign'></i>
+                </button>
+                <a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i
+                        class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>
+            </div>
+            <div>
+                <a href="#" class='btn-sm btn-upgrade rounded-pill fw-bold'>
+                    Mua VIP
+                </a>
+            </div>
+        </div>
+
+        <!-- ====================== TABS ====================== -->
+        <ul class="nav nav-umusic justify-content-center rounded-pill text-uppercase fw-bold my-4" role="tablist">
+            <li class="nav-item">
+                <a href="#tab1" class="btn btn-sm btn-light rounded-pill active fw-bold" data-bs-toggle="tab"
+                    role="tab">
+                    BÀI HÁT
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#tab2" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
+                    PLAYLIST
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#tab3" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
+                    NGHỆ SĨ
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#tab4" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
+                    ALBUM
+                </a>
+            </li>
+        </ul>
+
+        <!-- Tabs content -->
+        <div class="tab-content text-light">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                <p class="fs-sm">1 Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                    stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan
+                    helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+                    qui
+                    irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+                    cardigan
+                    american apparel, butcher voluptate nisi qui. Excepteur sint occaecat cupidatat non proident.
+                </p>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                <p class="fs-sm">2 Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                    squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan
+                    four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer
+                    mlkshk
+                    aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                    aesthetic
+                    magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente.</p>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel">
+                <p class="fs-sm">3 Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
+                    mcsweeney's
+                    organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork
+                    tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY
+                    synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
+                    whatever
+                    gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you
+                    probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu
+                    synth
+                    chambray yr.</p>
+            </div>
+            <div class="tab-pane fade" id="tab4" role="tabpanel">
+                <p class="fs-sm">4 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before
+                    they
+                    sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland
+                    seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY
+                    salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo
+                    wolf
+                    viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan.
+                </p>
+            </div>
+        </div>
+
+        <!-- ====================== HEADER ====================== -->
+        <header class="navbar shadow-sm justify-content-start flex-nowrap navbar-dark bg-dark" data-scroll-header
+            data-fixed-element>
+            <div class="container-fluid">
+
+                <!-- Toogle button -->
+                <button class="navbar-toggler ms-n3 d-md-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#components-nav"><span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand d-md-none me-0 me-md-2" href="#"><img src="img/logo.svg" alt="Umusic"></a>
+
+                <div class="d-md-flex flex-nowrap">
+                    <!-- Button -->
+                    <div class="d-none d-md-flex flex-nowrap">
+                        <button type="button" class="btn btn-sm rounded-pill btn-nav">
+                            <i class="ci-arrow-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm rounded-pill btn-nav mx-3">
+                            <i class="ci-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Collapse -->
+                    <div class="collapse popup-search" id="collapseSearch">
+                        <!-- Search -->
+                        <div class="input-group">
+                            <i
+                                class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
+                                placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
+                        </div>
+                        <!-- Toggle search (Only mobile)-->
+                        <a href="#collapseSearch" class="navbar-tool d-md-none ms-3" data-bs-toggle="collapse"
+                            role="button" aria-expanded="false" aria-controls="collapseSearch">
+                            <i class="ci-close"></i>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a href="#" class='btn-sm btn-upgrade rounded-pill fw-bold'>
-                        Mua VIP
+
+
+                <!-- Admin toolbar -->
+                <div class="navbar-toolbar d-flex align-items-center">
+
+                    <!-- Link -->
+                    <div class="d-none d-md-flex flex-nowrap">
+                        <a href="#" class="btn btn-sm link-light me-2">Đăng ký</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">Đăng nhập</a>
+                    </div>
+
+                    <!-- Toggle search (Only mobile)-->
+                    <a href="#collapseSearch" class="navbar-tool d-md-none" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="collapseSearch">
+                        <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-search"></i></div>
                     </a>
+
+                    <!-- Dropdown (Only web)-->
+                    <div class="btn-group dropdown ms-md-3">
+
+                        <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button"
+                                class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
+                                Cài đặt
+                            </button>
+                        </span>
+
+                        <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
+                            <a href="#" class="dropdown-item">Danh sách chặn</a>
+                            <div class="dropdown-divider m-0"></div>
+                            <a href="#" class="dropdown-item">Chất lượng nhạc</a>
+                            <div class="dropdown-divider m-0"></div>
+                            <a href="#" class="dropdown-item">Trình phát nhạc</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Dropdown -->
+                    <div class="btn-group dropdown ms-md-3">
+
+                        <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button"
+                                class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
+                                Username
+                            </button>
+                            <a class="navbar-tool d-md-none me-n2" href="#">
+                                <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-user"></i></div>
+                            </a>
+                        </span>
+
+                        <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
+                            <a href="#" class="dropdown-item">Tài khoản</a>
+                            <div class="dropdown-divider m-0"></div>
+                            <a href="#" class="dropdown-item">Thông tin chung</a>
+                            <div class="dropdown-divider m-0"></div>
+                            <a href="#" class="dropdown-item">Đăng xuất</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </header>
 
-            <!-- ====================== TABS ====================== -->
-            <ul class="nav nav-umusic justify-content-center rounded-pill text-uppercase fw-bold my-4" role="tablist">
-                <li class="nav-item">
-                    <a href="#tab1" class="btn btn-sm btn-light rounded-pill active fw-bold" data-bs-toggle="tab"
-                        role="tab">
-                        BÀI HÁT
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab2" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
-                        PLAYLIST
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab3" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
-                        NGHỆ SĨ
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tab4" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab" role="tab">
-                        ALBUM
-                    </a>
-                </li>
+
+        <div class="widget widget-links widget-light mb-4 pb-4">
+            <!-- List 01 -->
+            <ul id="listMenuLeft" class="widget-list">
+                <script>
+                    let itemMenuLeft = "", x, acitveItem;
+                    let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
+                    let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
+                    let borderLine = "";
+                    let vipImage = "";
+                    let urlImage = "img/vip.png";
+                    for (x = 1; x <= listIcon.length; x++) {
+
+                        //Set active
+                        x === 1 ? acitveItem = 'active' : acitveItem = '';
+
+                        //Set border
+                        let xx = x % 3;
+                        xx === 0 ? borderLine = "<li class='border-bottom border-light my-2'></li>" : borderLine = '';
+
+                        //Set image
+                        let lastItem = listIcon.length - 1;
+                        x === lastItem ? vipImage = "<li class='my-3'><a href='#'><img src='" + urlImage + "'></a></li>" : vipImage = '';
+
+                        itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
+                        itemMenuLeft += "<a class='widget-list-link' href='#'>";
+                        itemMenuLeft += "<i class='" + listIcon[x - 1] + " me-2'></i>";
+                        itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
+                        itemMenuLeft += "</a>";
+                        itemMenuLeft += "</li>";
+                        itemMenuLeft += vipImage;
+                        itemMenuLeft += borderLine;
+                    }
+                    document.getElementById("listMenuLeft").innerHTML = itemMenuLeft;
+                </script>
             </ul>
 
-            <!-- Tabs content -->
-            <div class="tab-content text-light">
-                <div class="tab-pane fade show active" id="tab1" role="tabpanel">
-                    <p class="fs-sm">1 Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                        stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan
-                        helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
-                        qui
-                        irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-                        cardigan
-                        american apparel, butcher voluptate nisi qui. Excepteur sint occaecat cupidatat non proident.
-                    </p>
-                </div>
-                <div class="tab-pane fade" id="tab2" role="tabpanel">
-                    <p class="fs-sm">2 Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
-                        squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan
-                        four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer
-                        mlkshk
-                        aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore
-                        aesthetic
-                        magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente.</p>
-                </div>
-                <div class="tab-pane fade" id="tab3" role="tabpanel">
-                    <p class="fs-sm">3 Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
-                        mcsweeney's
-                        organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork
-                        tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY
-                        synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
-                        whatever
-                        gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you
-                        probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu
-                        synth
-                        chambray yr.</p>
-                </div>
-                <div class="tab-pane fade" id="tab4" role="tabpanel">
-                    <p class="fs-sm">4 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before
-                        they
-                        sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland
-                        seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY
-                        salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo
-                        wolf
-                        viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan.
-                    </p>
-                </div>
-            </div>
+            <!-- List 02 (Only mobile)-->
+            <ul class="widget-list d-md-none">
+                <li class="widget-list-item">
+                    <a class="widget-list-link" href="#"><span class="text-truncate">
+                            Danh sách chặn </span></a>
+                </li>
+                <li class="widget-list-item">
+                    <a class="widget-list-link" href="#"><span class="text-truncate">
+                            Chất lượng nhạc </span></a>
+                </li>
+                <li class="widget-list-item">
+                    <a class="widget-list-link" href="#"><span class="text-truncate">
+                            Trình phát nhạc </span></a>
+                </li>
+            </ul>
+        </div>
 
 
-
-            <!-- ====================== HEADER ====================== -->
-            <header class="navbar shadow-sm justify-content-start flex-nowrap navbar-dark bg-dark" data-scroll-header
-                data-fixed-element>
-                <div class="container-fluid">
-
-                    <!-- Toogle button -->
-                    <button class="navbar-toggler ms-n3 d-md-none" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#components-nav"><span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <a class="navbar-brand d-md-none me-0 me-md-2" href="#"><img src="img/logo.svg" alt="Umusic"></a>
-
-                    <div class="d-md-flex flex-nowrap">
-                        <!-- Button -->
-                        <div class="d-none d-md-flex flex-nowrap">
-                            <button type="button" class="btn btn-sm rounded-pill btn-nav">
-                                <i class="ci-arrow-left"></i>
-                            </button>
-                            <button type="button" class="btn btn-sm rounded-pill btn-nav mx-3">
-                                <i class="ci-arrow-right"></i>
-                            </button>
-                        </div>
-
-                        <!-- Collapse -->
-                        <div class="collapse popup-search" id="collapseSearch">
-                            <!-- Search -->
-                            <div class="input-group">
-                                <i
-                                    class="ci-search position-absolute top-50 start-0 translate-middle-y text-muted fs-base ms-3"></i>
-                                <input class="form-control form-control-sm ps-5 rounded-pill border-0" type="text"
-                                    placeholder="Tìm kiếm bài hát, nghệ sĩ, MV ..." />
-                            </div>
-                            <!-- Toggle search (Only mobile)-->
-                            <a href="#collapseSearch" class="navbar-tool d-md-none ms-3" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="collapseSearch">
-                                <i class="ci-close"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- Admin toolbar -->
-                    <div class="navbar-toolbar d-flex align-items-center">
-
-                        <!-- Link -->
-                        <div class="d-none d-md-flex flex-nowrap">
-                            <a href="#" class="btn btn-sm link-light me-2">Đăng ký</a>
-                            <a href="#" class="btn btn-light btn-sm rounded-pill">Đăng nhập</a>
-                        </div>
-
-                        <!-- Toggle search (Only mobile)-->
-                        <a href="#collapseSearch" class="navbar-tool d-md-none" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="collapseSearch">
-                            <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-search"></i></div>
-                        </a>
-
-                        <!-- Dropdown (Only web)-->
-                        <div class="btn-group dropdown ms-md-3">
-
-                            <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <button type="button"
-                                    class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
-                                    Cài đặt
-                                </button>
-                            </span>
-
-                            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
-                                <a href="#" class="dropdown-item">Danh sách chặn</a>
-                                <div class="dropdown-divider m-0"></div>
-                                <a href="#" class="dropdown-item">Chất lượng nhạc</a>
-                                <div class="dropdown-divider m-0"></div>
-                                <a href="#" class="dropdown-item">Trình phát nhạc</a>
-                            </div>
-                        </div>
-
-
-                        <!-- Dropdown -->
-                        <div class="btn-group dropdown ms-md-3">
-
-                            <span class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <button type="button"
-                                    class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block">
-                                    Username
-                                </button>
-                                <a class="navbar-tool d-md-none me-n2" href="#">
-                                    <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-user"></i></div>
-                                </a>
-                            </span>
-
-                            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end py-0">
-                                <a href="#" class="dropdown-item">Tài khoản</a>
-                                <div class="dropdown-divider m-0"></div>
-                                <a href="#" class="dropdown-item">Thông tin chung</a>
-                                <div class="dropdown-divider m-0"></div>
-                                <a href="#" class="dropdown-item">Đăng xuất</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </header>
-
-
-            <div class="widget widget-links widget-light mb-4 pb-4">
-                <!-- List 01 -->
-                <ul id="listMenuLeft" class="widget-list">
-                    <script>
-                        let itemMenuLeft = "", x, acitveItem;
-                        let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
-                        let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
-                        let borderLine = "";
-                        let vipImage = "";
-                        let urlImage = "img/vip.png";
-                        for (x = 1; x <= listIcon.length; x++) {
-
-                            //Set active
-                            x === 1 ? acitveItem = 'active' : acitveItem = '';
-
-                            //Set border
-                            let xx = x % 3;
-                            xx === 0 ? borderLine = "<li class='border-bottom border-light my-2'></li>" : borderLine = '';
-
-                            //Set image
-                            let lastItem = listIcon.length - 1;
-                            x === lastItem ? vipImage = "<li class='my-3'><a href='#'><img src='" + urlImage + "'></a></li>" : vipImage = '';
-
-                            itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
-                            itemMenuLeft += "<a class='widget-list-link' href='#'>";
-                            itemMenuLeft += "<i class='" + listIcon[x - 1] + " me-2'></i>";
-                            itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
-                            itemMenuLeft += "</a>";
-                            itemMenuLeft += "</li>";
-                            itemMenuLeft += vipImage;
-                            itemMenuLeft += borderLine;
-                        }
-                        document.getElementById("listMenuLeft").innerHTML = itemMenuLeft;
-                    </script>
-                </ul>
-
-                <!-- List 02 (Only mobile)-->
-                <ul class="widget-list d-md-none">
-                    <li class="widget-list-item">
-                        <a class="widget-list-link" href="#"><span class="text-truncate">
-                                Danh sách chặn </span></a>
-                    </li>
-                    <li class="widget-list-item">
-                        <a class="widget-list-link" href="#"><span class="text-truncate">
-                                Chất lượng nhạc </span></a>
-                    </li>
-                    <li class="widget-list-item">
-                        <a class="widget-list-link" href="#"><span class="text-truncate">
-                                Trình phát nhạc </span></a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Grid-->
-            <div class="container-fluid">
-                <div id="listSong01" class="row pt-3 mx-n2">
-                    <!-- Product-->
-                    <script>
-                        let itemSong = "", i;
-                        for (i = 1; i <= 6; i++) {
-                            itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2'>";
-                            itemSong += "<div class='card product-card-alt active-card'>";
-                            itemSong += "<div class='product-thumb'>";
-                            itemSong += "<div class='position-relative w-100'>";
-                            itemSong += "<div class='product-card-actions'>";
-                            itemSong += "<a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
-                            itemSong += "<button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'>";
-                            itemSong += "<i class='ci-u-triangle'></i>";
-                            itemSong += "<img src='img/u-pause-sign.svg' width='15px'/>";
-                            itemSong += "</button>";
-                            itemSong += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a>";
-                            itemSong += "</div>";
-                            itemSong += "<a class='product-thumb-overlay rounded' href='#'></a>";
-                            itemSong += "<img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'/>";
-                            itemSong += "</div>";
-                            itemSong += "</div>";
-                            itemSong += "<div class='card-body'>";
-                            itemSong += "<h6 class='product-title mb-0 text-truncate-multi h6'>";
-                            itemSong += "<a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a>";
-                            itemSong += "</h6>";
-                            itemSong += "</div>";
-                            itemSong += "</div>";
-                            itemSong += "</div>";
-                        }
-                        document.getElementById("listSong01").innerHTML = itemSong;
-                    </script>
-                </div>
-            </div>
 
 
     </main>
