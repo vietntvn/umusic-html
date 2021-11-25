@@ -15,7 +15,7 @@
   $color-gold: #FED51B;
   
   body{
-    font-family: 'Inter';
+    font-family: 'Inter', Rubik, sans-serif;
     font-size: 0.875rem;
     background-color: $color-gray-4;
   }  
@@ -26,6 +26,10 @@
   
   .size-24{
     font-size: 1.5rem;
+  }
+
+  .size-48{
+    font-size: 3rem;
   }
   
   .h6{

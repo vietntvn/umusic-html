@@ -34,11 +34,12 @@
     <main>
 
         <!-- Header -->
-        <div class="d-flex text-light w-100">
-            <div class="d-flex align-items-end">
+        
+            <div class="d-flex align-items-end justify-content-start w-100">
                 <div><img src="https://picsum.photos/200" class="rounded"></div>
                 <div class="ps-3">
-                    <div class="h1 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
+                    <div class="text-muted mb-3">Playlist</div>
+                    <div class="h1 size-48 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
                     <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
                         <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
                         <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
@@ -46,21 +47,34 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
-        <div class="d-flex text-light justify-content-between w-100">
-            <div class="d-flex align-items-start">
+        
+            <div class="d-flex align-items-start justify-content-between w-100">
                 <div class="pe-3">
-                    <div class="h1 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
-                    <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
-                        <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
-                        <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
-                            href="#" class="text-muted">V-Pop</a>; 07/10/2021; 17K yêu thích
+                    <div class="h1 size-48 fw-bold">Hà Thanh Xuân</div>
+                    <div id="toggleContent" class="toggle-content">
+                        <div class="text-light text-content">
+                            Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có nhiều album
+                            phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ yêu thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ như một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên định của những nghệ sĩ theo đuổi dòng nhạc này.
+                          </div>
+                          <p>
+                            <a href="#" class="link-light" onclick="toggleFunction()">
+                                <span class="text-full">XEM THÊM</span>
+                                <span class="text-short">RÚT GỌN</span>
+                              </a>
+                              <script>
+                                  function toggleFunction() {
+                                        var element = document.getElementById("toggleContent");
+                                        element.classList.toggle("toggle-on");
+                                    }
+                              </script>
+                          </p>
                     </div>
                 </div>
                 <div><img src="https://picsum.photos/200" class="rounded"></div>
             </div>
-        </div>
+        
 
         <!-- Grid-->
         <div class="container-fluid">
