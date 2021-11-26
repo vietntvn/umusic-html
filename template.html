@@ -20,7 +20,7 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
     <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
-
+    <link rel="stylesheet" href="vendor/simplebar/dist/simplebar.min.css">
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="scss/theme.css">
     <!-- Theme style -->
@@ -32,87 +32,6 @@
 
 <body>
     <main>
-
-        <!-- Header -->
-        
-            <div class="d-flex align-items-end justify-content-start w-100">
-                <div><img src="https://picsum.photos/200" class="rounded"></div>
-                <div class="ps-3">
-                    <div class="text-muted mb-3">Playlist</div>
-                    <div class="h1 size-48 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
-                    <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
-                        <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
-                        <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
-                            href="#" class="text-muted">V-Pop</a>; 07/10/2021; 17K yêu thích
-                    </div>
-                </div>
-            </div>
-        
-
-        
-            <div class="d-flex align-items-start justify-content-between w-100">
-                <div class="pe-3">
-                    <div class="h1 size-48 fw-bold">Hà Thanh Xuân</div>
-                    <div id="toggleContent" class="toggle-content">
-                        <div class="text-light text-content">
-                            Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có nhiều album
-                            phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ yêu thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ như một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên định của những nghệ sĩ theo đuổi dòng nhạc này.
-                          </div>
-                          <p>
-                            <a href="#" class="link-light" onclick="toggleFunction()">
-                                <span class="text-full">XEM THÊM</span>
-                                <span class="text-short">RÚT GỌN</span>
-                              </a>
-                              <script>
-                                  function toggleFunction() {
-                                        var element = document.getElementById("toggleContent");
-                                        element.classList.toggle("toggle-on");
-                                    }
-                              </script>
-                          </p>
-                    </div>
-                </div>
-                <div><img src="https://picsum.photos/200" class="rounded"></div>
-            </div>
-        
-
-        <!-- Grid-->
-        <div class="container-fluid">
-            <div id="listSong01" class="row pt-3 mx-n2 align-items-stretch">
-                <!-- Product-->
-                <script>
-                    let itemSong = "", i, flagSigner;
-                    let hasLink = false;
-                    let hasSinger = false;
-
-                    // Check singer
-                    hasSinger ? flagSigner = "singer-thumb" : "";
-
-                    let linkItem = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-                    let contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-                    let selectedItem = "";
-                    let flagLink = "";
-
-                    for (i = 1; i <= 6; i++) {
-                        if (!hasLink) {
-                            i === 1 ? flagLink = "card-link" : flagLink = "";
-                            i === 1 ? selectedItem = linkItem : selectedItem = contentItem;
-                        } else {
-                            flagLink = "";
-                            selectedItem = contentItem;
-                        }
-                        itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-                        itemSong += "<div class='card product-card-alt " + flagLink + "'>";
-                        itemSong += selectedItem;
-                        itemSong += "</div>";
-                        itemSong += "</div>";
-                    }
-                    document.getElementById("listSong01").innerHTML = itemSong;
-                </script>
-            </div>
-        </div>
-
 
         <!-- Dark table with hoverable rows -->
         <div class="u-table">
@@ -187,9 +106,9 @@
 
                         itemSongTable += "</div>";
                         itemSongTable += "<div class='u-col col-02'><a href='#'><div class='d-flex align-items-center'>";
-                        itemSongTable += "<div class='media-img'><img src='https://picsum.photos/200'></div>";
+                        itemSongTable += "<div class='media-img flex-shrink-0'><img src='https://picsum.photos/200'></div>";
                         itemSongTable += "<div class='ps-3'>";
-                        itemSongTable += "<div class='fs-md text-truncate' style='width:100px'>Yêu Một Người Gian Dối</div>";
+                        itemSongTable += "<div class='fs-md text-truncate'>Yêu Một Người Gian Dối</div>";
                         itemSongTable += "<div class='fs-xs'>Như Việt</div></div>";
                         itemSongTable += "<span class='vip-lable'>VIP</span></div></a></div><div class='u-col col-03'>04:05</div><div class='u-col col-04'>";
                         itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-lyrics size-24'></i></a>";
@@ -203,6 +122,173 @@
                 <!-- Item -->
             </div>
 
+        </div>
+
+        <!-- Header -->
+
+        <div class="d-flex align-items-end justify-content-start w-100">
+            <div><img src="https://picsum.photos/200" class="rounded img-fixed"></div>
+            <div class="ps-3">
+                <div class="text-muted mb-3">Playlist</div>
+                <div class="h1 size-48 fw-bold">Hà Thanh Xuân Tổng Hợp</div>
+                <div class="text-muted fs-xs">39 bài hát - bởi Umusic; <a href="" class="fw-bold">Hà Thanh Xuân</a>,
+                    <a href="#" class="text-muted">Hoàng Thục Linh</a>; <a href="#" class="text-muted">Y Phụng</a>;
+                    <a href="#" class="text-muted">Việt Nam</a>, <a href="#" class="text-muted">Nhạc Trẻ</a>, <a
+                        href="#" class="text-muted">V-Pop</a>; 07/10/2021; 17K yêu thích
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-start justify-content-between flex-row-reverse">
+            <div class="flex-grow-0 ms-md-5" style="flex: 0 0 240px"><img src="https://picsum.photos/200"
+                    class="rounded img-fixed" id="imgFixed"></div>
+            <div class="pe-3 flex-grow-1">
+                <div class="h1 size-48 fw-bold" id="size48">Hà Thanh Xuân</div>
+                <div id="toggleContent" class="toggle-content">
+                    <div class="text-light text-content" id="textContent">
+                        Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album
+                        phòng thu và liveshow hoành tráng, hàng loạt bản hisdfsdft được khán giả nhiều thế hệ yêu thích
+                        Trướcdfs
+                        sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ
+                        như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này. Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn
+                        20
+                        năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ
+                        yêu
+                        thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của
+                        các
+                        ca sĩ như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này.
+                        Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album
+                        phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ yêu thích
+                        Trước
+                        sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ
+                        như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này. Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn
+                        20
+                        năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ
+                        yêu
+                        thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của
+                        các
+                        ca sĩ như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này.
+                        Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album
+                        phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ yêu thích
+                        Trước
+                        sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ
+                        như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này. Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn
+                        20
+                        năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ
+                        yêu
+                        thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của
+                        các
+                        ca sĩ như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này.
+                        Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn 20 năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album
+                        phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ yêu thích
+                        Trước
+                        sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của các ca sĩ
+                        như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt của dòng nhạc truyền thống cũng như sự kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này. Là một tên tuổi lớn của âm nhạc Việt Nam. Sau hơn
+                        20
+                        năm hoạt động bền bỉ, Hà Thanh Xuân có
+                        nhiều album phòng thu và liveshow hoành tráng, hàng loạt bản hit được khán giả nhiều thế hệ
+                        yêu
+                        thích Trước sự chiếm lĩnh của dòng nhạc bolero trong đời sống âm nhạc thì những liveshow của
+                        các
+                        ca sĩ như
+                        một minh chứng cho sức sống bền bỉ, mãnh liệt sdfasdfas của dòng nhạc truyền thống cũng như sự
+                        kiên
+                        định
+                        của những nghệ sĩ theo đuổi dòng nhạc này
+                    </div>
+                    <p>
+                        <a href="#" class="link-light" onclick="toggleFunction()">
+                            <span class="text-full">XEM THÊM</span>
+                            <span class="text-short">RÚT GỌN</span>
+                        </a>
+                        <script>
+                            function toggleFunction() {
+                                var element = document.getElementById("toggleContent");
+                                var element1 = document.getElementById("imgFixed");
+                                var element2 = document.getElementById("size48");
+                                var element3 = document.getElementById("textContent");
+                                element.classList.toggle("toggle-on");
+                                let heightValue = (element1.offsetHeight - (element2.offsetHeight + 15)).toString() + "px";
+
+                                if (document.getElementsByClassName('toggle-on').length > 0) {
+                                    element3.setAttribute("style", "max-height:" + heightValue);
+                                } else {
+                                    element3.setAttribute("style", "max-height: 40px");
+                                }
+
+                                // document.getElementsByClassName('toggle-on').length > 0 ? new SimpleBar(element3) :  element3.unMount();
+                                new SimpleBar(element3);
+                            }
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Grid-->
+        <div class="container-fluid">
+            <div id="listSong01" class="row pt-3 mx-n2 align-items-stretch">
+                <!-- Product-->
+                <script>
+                    let itemSong = "", i, flagSigner;
+                    let hasLink = false;
+                    let hasSinger = false;
+
+                    // Check singer
+                    hasSinger ? flagSigner = "singer-thumb" : "";
+
+                    let linkItem = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
+                    let contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
+
+                    let selectedItem = "";
+                    let flagLink = "";
+
+                    for (i = 1; i <= 6; i++) {
+                        if (!hasLink) {
+                            i === 1 ? flagLink = "card-link" : flagLink = "";
+                            i === 1 ? selectedItem = linkItem : selectedItem = contentItem;
+                        } else {
+                            flagLink = "";
+                            selectedItem = contentItem;
+                        }
+                        itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
+                        itemSong += "<div class='card product-card-alt " + flagLink + "'>";
+                        itemSong += selectedItem;
+                        itemSong += "</div>";
+                        itemSong += "</div>";
+                    }
+                    document.getElementById("listSong01").innerHTML = itemSong;
+                </script>
+            </div>
         </div>
 
         <!-- Link Top -->
@@ -458,6 +544,7 @@
     <!-- Vendor scrits: js libraries and plugins-->
     <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
 </body>

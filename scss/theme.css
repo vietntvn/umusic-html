@@ -20394,6 +20394,10 @@ body {
   font-size: 3rem;
 }
 
+.fs-smx {
+  font-size: .75rem !important;
+}
+
 .h6 {
   font-size: 1rem !important;
   line-height: 1.25rem !important;
@@ -20421,6 +20425,11 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 
 .f-title {
   font-size: 1.5rem;
+}
+
+.img-fixed {
+  width: 240px;
+  height: 240px;
 }
 
 .form-control {
@@ -20927,7 +20936,9 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 15px;
-  max-height: 80px;
+  max-height: 40px;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
 }
 
 .toggle-content .text-short {
@@ -20936,7 +20947,10 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 
 .toggle-on .text-content {
   overflow: visible;
-  max-height: auto;
+  max-height: unset;
+  -webkit-line-clamp: unset;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
 }
 
 .toggle-on .text-short {
@@ -20945,5 +20959,58 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 
 .toggle-on .text-full {
   display: none;
+}
+
+.simplebar-track.simplebar-vertical {
+  background-color: black;
+  border-radius: 2px;
+}
+
+.dropdown-item.show {
+  background-color: #595959 !important;
+}
+
+.dropdown-item.show:hover {
+  background-color: #595959 !important;
+}
+
+.dropend .dropdown-toggle::after {
+  font-family: "cartzilla-icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  content: "\e90a";
+  border: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.quality-select {
+  cursor: pointer;
+}
+
+.quality-select .ci-check {
+  display: none;
+}
+
+.quality-select .selected {
+  background-color: #595959 !important;
+}
+
+.quality-select .selected .ci-check {
+  display: inline-block;
+}
+
+.form-switch-custom .form-check-input {
+  background-color: #595959;
+}
+
+.form-switch-custom .form-check-input:checked {
+  background-color: #F3903F;
+  -webkit-box-shadow: #F3903F;
+          box-shadow: #F3903F;
 }
 /*# sourceMappingURL=theme.css.map */
