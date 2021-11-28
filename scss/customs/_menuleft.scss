@@ -29,11 +29,14 @@
 
 .widget-list-item {
   margin-bottom: 0;
-  i {
+  .ci-custom {
     font-size: 1.5rem;
     vertical-align: middle;
     position: relative;
     margin-top: -4px;
+  }
+  .ci-custom-2 {
+    margin-top: -2px;  
   }
   .widget-list-link {
     padding: 0.7rem 1.25rem;

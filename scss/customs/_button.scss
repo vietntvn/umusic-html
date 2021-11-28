@@ -46,3 +46,15 @@
         display: inline-block;
     }
 }
+
+.btn-gradient-custom{
+    background: rgb(255,160,14);
+    background: linear-gradient(90deg, rgba(255,160,14,1) 0%, rgba(254,113,24,1) 100%);
+    color: #fff;
+
+    &:hover, &:active, &:focus,
+    &.active, &.show {
+        color: $white;
+        opacity: .65;
+    }
+}

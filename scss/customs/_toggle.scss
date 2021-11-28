@@ -60,6 +60,16 @@
   }
 }
 
+.widget {
+  .dropend {
+    .dropdown-toggle{
+      &::after{
+        top: 13px;
+      }
+    }
+  }
+}
+
 .quality-select{
   cursor: pointer;
   .ci-check{
