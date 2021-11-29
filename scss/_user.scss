@@ -11,6 +11,8 @@
   $color-gray-2: #282828;
   $color-gray-3: #181818;
   $color-gray-4: #121212;
+  $color-gray-5: #595959;
+  $color-gray-6: #2D2D2D;
   $color-primary: #F3903F;
   $color-gold: #FED51B;
   
@@ -29,7 +31,13 @@
   }
 
   .size-48{
-    font-size: 3rem;
+    font-size: 1.5rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .size-48{
+      font-size: 3rem;
+    }    
   }
   
   .fs-smx{
@@ -82,4 +90,11 @@
 
   .bg-gray{
     background-color: #373737;
+  }
+
+  .link-color{
+    color: $color-gray-1;
+    &:hover{
+      color: $white;
+    }
   }

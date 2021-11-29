@@ -35,12 +35,15 @@
     border-radius: 2px;
 }
 
-.dropdown-item.show{
-  background-color: #595959 !important;
+.dropdown-item.show, .widget-list-link.show{
+  background-color: $color-gray-5 !important;
   &:hover{
-    background-color: #595959 !important;
+    background-color: $color-gray-5 !important;
   }
 }
+
+
+
 
 .dropend {
   .dropdown-toggle{
@@ -76,7 +79,7 @@
     display: none;
   }
   .selected{
-    background-color: #595959 !important;
+    background-color: $color-gray-5 !important;
     .ci-check{
       display: inline-block;
     }
@@ -85,7 +88,7 @@
 
 .form-switch-custom {
   .form-check-input {
-    background-color: #595959;
+    background-color: $color-gray-5;
     &:checked {
       background-color: $color-primary;
       box-shadow: $color-primary;

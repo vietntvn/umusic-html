@@ -20443,7 +20443,13 @@ body {
 }
 
 .size-48 {
-  font-size: 3rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .size-48 {
+    font-size: 3rem;
+  }
 }
 
 .fs-smx {
@@ -20498,6 +20504,14 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   background-color: #373737;
 }
 
+.link-color {
+  color: #B3B3B3;
+}
+
+.link-color:hover {
+  color: #fff;
+}
+
 .form-control {
   color: #fff;
   background-color: #282828;
@@ -20526,6 +20540,20 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
 
 .form-control::placeholder {
   color: #fff;
+}
+
+.search-suggetion {
+  background-color: #2D2D2D;
+  border-radius: 1.25rem;
+}
+
+.search-suggetion .header-suggestion {
+  border-bottom: 1px solid #595959;
+  color: #fff;
+}
+
+.search-suggetion .search-suggetion-list a:hover {
+  background-color: #595959;
 }
 
 .product-card-alt {
@@ -21048,11 +21076,11 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   border-radius: 2px;
 }
 
-.dropdown-item.show {
+.dropdown-item.show, .widget-list-link.show {
   background-color: #595959 !important;
 }
 
-.dropdown-item.show:hover {
+.dropdown-item.show:hover, .widget-list-link.show:hover {
   background-color: #595959 !important;
 }
 
