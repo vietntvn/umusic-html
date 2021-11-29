@@ -28,7 +28,6 @@
 <!-- Body-->
 
 
-
 <body>
     <main>
 
@@ -222,7 +221,6 @@
                         <!-- ====================== DROPDOWN HEADER ====================== -->
                         <!-- Dropdown 1 -->
                         <div class="dropdown">
-
                             <button class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block"
                                 type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" aria-expanded="false">
@@ -233,7 +231,7 @@
 
                                 <a class="dropdown-item" href="#">Danh sách chặn</a>
 
-                                <div class="dropdown dropend">
+                                <div class="dropdown dropstart">
                                     <a class="dropdown-item dropdown-toggle" href="#" id="dropdown-layouts"
                                         data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside"
                                         aria-expanded="false">Chất lượng nhạc</a>
@@ -258,7 +256,7 @@
                                     </div>
                                 </div>
 
-                                <div class="dropdown dropend">
+                                <div class="dropdown dropstart">
                                     <a class="dropdown-item dropdown-toggle" href="#" id="dropdown-layouts-2"
                                         data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside"
                                         aria-expanded="false">Trình phát nhạc</a>
@@ -740,7 +738,7 @@
 
 
 
-
+        <!-- ====================== MENU LEFT ====================== -->
         <div class="widget widget-links widget-light mb-4 pb-4">
             <!-- List 01 -->
             <ul id="listMenuLeft" class="widget-list">
@@ -748,6 +746,7 @@
                     let itemMenuLeft = "", x, acitveItem;
                     let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
                     let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
+                    let listLink = ['index.html', 'individual.html', 'library.html', 'new.html', 'chart.html', 'genre.html', 'playlist.html', 'like.html', 'https://play.google.com/store/apps/details?id=com.spotify.music'];
                     let borderLine = "";
                     let vipImage = "";
                     let urlImage = "img/vip.png";
@@ -765,8 +764,8 @@
                         x === lastItem ? vipImage = "<li class='my-3'><a href='#'><img src='" + urlImage + "'></a></li>" : vipImage = '';
 
                         itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
-                        itemMenuLeft += "<a class='widget-list-link' href='#'>";
-                        itemMenuLeft += "<i class='" + listIcon[x - 1] + " ci-custom me-2'></i>";
+                        itemMenuLeft += "<a class='widget-list-link' href='" + listLink[x - 1] + "'>";
+                        itemMenuLeft += "<i class='" + listIcon[x - 1] + "  ci-custom me-2'></i>";
                         itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
                         itemMenuLeft += "</a>";
                         itemMenuLeft += "</li>";

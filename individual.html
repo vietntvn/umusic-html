@@ -90,8 +90,7 @@
                         </a>
 
                         <!-- Dropdown (Only web)-->
-                        <div class="dropdown dropdown ms-md-3">
-
+                        <div class="btn-group dropdown ms-md-3">
                             <button class="btn btn-dark btn-sm dropdown-toggle rounded-pill d-none d-md-inline-block"
                                 type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                                 data-bs-auto-close="outside" aria-expanded="false">
@@ -111,13 +110,15 @@
                                         <div class="quality-select">
                                             <div class="dropdown-item text-wrap selected">
                                                 <div class="text-light"><span class="fw-bold">SQ &bull; 128</span><i
-                                                        class="ci-check ms-3"></i></div>
+                                                        class="ci-check ms-3"></i>
+                                                </div>
                                                 <div class="fs-smx text-muted">Giảm sử dụng dữ liệu cho các kết nối chậm
                                                     hơn</div>
                                             </div>
                                             <div class="dropdown-item text-wrap">
                                                 <div class="text-light"><span class="fw-bold">HQ &bull; 320</span><i
-                                                        class="ci-check ms-3"></i></div>
+                                                        class="ci-check ms-3"></i>
+                                                </div>
                                                 <div class="fs-smx text-muted">Kết hợp tốt nhất giữa việc sử dụng dữ
                                                     liệu và chất lượng
                                                     âm
@@ -186,6 +187,7 @@
 
                 <!-- Offcanvas body -->
                 <div class="offcanvas-body py-0" data-simplebar data-simplebar-auto-hide="true">
+                    <!-- ====================== MENU LEFT ====================== -->
                     <div class="widget widget-links widget-light mb-4 pb-4">
                         <!-- List 01 -->
                         <ul id="listMenuLeft" class="widget-list">
@@ -200,7 +202,7 @@
                                 for (x = 1; x <= listIcon.length; x++) {
 
                                     //Set active
-                                    x === 1 ? acitveItem = 'active' : acitveItem = '';
+                                    x === 2 ? acitveItem = 'active' : acitveItem = '';
 
                                     //Set border
                                     let xx = x % 3;
@@ -246,8 +248,196 @@
             <div class="mt-5 pt-3"></div>
 
 
+            <!-- SESSION -->
+            <div class="container-fluid pb-4">
+                <!-- ====================== TABS ====================== -->
+                <ul class="nav nav-umusic justify-content-center rounded-pill text-uppercase fw-bold my-4"
+                    role="tablist">
+                    <li class="nav-item">
+                        <a href="#tab1" class="btn btn-sm btn-light rounded-pill active fw-bold" data-bs-toggle="tab"
+                            role="tab">
+                            BÀI HÁT
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab2" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab"
+                            role="tab">
+                            PLAYLIST
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab3" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab"
+                            role="tab">
+                            NGHỆ SĨ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab4" class="btn btn-sm btn-light rounded-pill fw-bold" data-bs-toggle="tab"
+                            role="tab">
+                            ALBUM
+                        </a>
+                    </li>
+                </ul>
 
-        </section>
+                <!-- Tabs content -->
+                <div class="tab-content text-light">
+                    <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+
+                        <!-- Link Top -->
+                        <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                            <div>
+                                <button type='button' class='btn btn-warning rounded-pill btn-icon me-3 play-toggle'
+                                    data-bs-toggle='button'>
+                                    <i class='ci-u-triangle'></i>
+                                    <i class='ci-u-pause-sign'></i>
+                                </button>
+                                <a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i
+                                        class='ci-u-like-outline size-24'></i><i
+                                        class='ci-u-like-solid size-24'></i></a>
+                            </div>
+                            <div>
+                                <a href="#" class='btn-sm btn-upgrade rounded-pill fw-bold'>
+                                    Mua VIP
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
+                        <div class="u-table mt-3">
+                            <!-- Heading -->
+                            <div class="d-flex flex-nowrap justify-content-between align-items-center u-heading">
+                                <div class="u-col col-01">#</div>
+                                <div class="u-col col-02">Bài hát</div>
+                                <div class="u-col col-03">Thời lượng</div>
+                                <div class="u-col col-04">Tùy chọn</div>
+                            </div>
+
+
+                            <!-- listSongTable -->
+                            <div id="listSongTable">
+                                <script>
+
+                                    let itemSongTable = "", index;
+                                    let itemPlaying = "";
+                                    let itemToggle = "";
+                                    let vipLable = "";
+
+                                    // For billboard
+                                    let itemUp = "<span class='text-up ci-caret'></span> <span class='text-level'>6</span>";
+                                    let itemBalance = "<span class='text-balance'></span> <span class='text-level'>2</span>";
+                                    let itemDown = "<span class='text-down ci-caret'></span> <span class='text-level'>1</span>";
+                                    let textBillboard;
+                                    let textLevel;
+
+                                    for (index = 0; index < 10; index++) {
+
+                                        index === 6 ? itemPlaying = "active" : itemPlaying = ""
+                                        index === 5 ? vipLable = "for-vip" : vipLable = ""
+
+                                        // For billboard
+                                        index === 0 ? textBillboard = itemUp : textBillboard = itemDown;
+
+                                        switch (index) {
+                                            case 0:
+                                                textLevel = "top-level";
+                                                break;
+                                            case 1:
+                                                textLevel = "second-level";
+                                                break;
+                                            case 2:
+                                                textLevel = "third-level";
+                                                break;
+                                            default:
+                                                textLevel = "";
+                                                break;
+                                        }
+
+                                        if (index === 3 || index === 5 || index === 7) {
+                                            textBillboard = itemBalance;
+                                        }
+
+                                        itemSongTable += "<div class='d-flex flex-nowrap justify-content-between align-items-center u-row " + itemPlaying + vipLable + "'>";
+
+                                        itemSongTable += "<div class='u-col col-01'>";
+
+                                        itemSongTable += "<div class='text-index'>";
+                                        itemSongTable += "<span class='text-number'>" + (index + 1) + "</span>";
+                                        itemSongTable += "<span class='icon-sign'>";
+                                        itemSongTable += "<i class='ci-u-triangle'></i></span>";
+                                        itemSongTable += "</div>";
+
+                                        // itemSongTable += "<div class='text-billboard d-flex align-items-center'>";
+                                        // itemSongTable += "<span class='text-number-decor d-flex align-items-center justify-content-center fw-bold " + textLevel + "'>" + (index + 1) + "</span>";
+                                        // itemSongTable += "<div class='text-gaph ms-3'>" + textBillboard + "</div>";
+                                        // itemSongTable += "<span class='icon-sign'>";
+                                        // itemSongTable += "<i class='ci-u-triangle'></i></span>";
+                                        // itemSongTable += "</div>";
+
+                                        itemSongTable += "</div>";
+                                        itemSongTable += "<div class='u-col col-02'><a href='#'><div class='d-flex align-items-center'>";
+                                        itemSongTable += "<div class='media-img flex-shrink-0'><img src='https://picsum.photos/200'></div>";
+                                        itemSongTable += "<div class='ps-3'>";
+                                        itemSongTable += "<div class='fs-md text-truncate'>Yêu Một Người Gian Dối</div>";
+                                        itemSongTable += "<div class='fs-xs'>Như Việt</div></div>";
+                                        itemSongTable += "<span class='vip-lable'>VIP</span></div></a></div><div class='u-col col-03'>04:05</div><div class='u-col col-04'>";
+                                        itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-lyrics size-24'></i></a>";
+                                        itemSongTable += "<a class='d-inline-block align-middle like-toggle mx-2' href='#' " + itemToggle + ">";
+                                        itemSongTable += "<i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
+                                        itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div></div>";
+                                    }
+                                    document.getElementById("listSongTable").innerHTML = itemSongTable;
+                                </script>
+
+                                <!-- Item -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2" role="tabpanel">
+                        <p class="fs-sm">2 Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+                            coffee
+                            squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
+                            artisan
+                            four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft
+                            beer
+                            mlkshk
+                            aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                            aesthetic
+                            magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente.</p>
+                    </div>
+                    <div class="tab-pane fade" id="tab3" role="tabpanel">
+                        <p class="fs-sm">3 Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
+                            mcsweeney's
+                            organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify
+                            pitchfork
+                            tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica.
+                            DIY
+                            synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
+                            whatever
+                            gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred
+                            you
+                            probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu
+                            synth
+                            chambray yr.</p>
+                    </div>
+                    <div class="tab-pane fade" id="tab4" role="tabpanel">
+                        <p class="fs-sm">4 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party
+                            before
+                            they
+                            sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack
+                            portland
+                            seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh
+                            DIY
+                            salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.
+                            Lomo
+                            wolf
+                            viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia
+                            freegan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
     </main>
 
 
