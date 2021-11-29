@@ -20512,12 +20512,12 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   color: #fff;
 }
 
-.form-control {
+.form-control-custom {
   color: #fff;
   background-color: #282828;
 }
 
-.form-control:focus {
+.form-control-custom:focus {
   color: #fff;
   background-color: #282828;
   border-color: #f9c89f;
@@ -20526,20 +20526,61 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
           box-shadow: none;
 }
 
-.form-control::-webkit-input-placeholder {
+.form-control-custom::-webkit-input-placeholder {
   color: #fff;
 }
 
-.form-control:-ms-input-placeholder {
+.form-control-custom:-ms-input-placeholder {
   color: #fff;
 }
 
-.form-control::-ms-input-placeholder {
+.form-control-custom::-ms-input-placeholder {
   color: #fff;
 }
 
-.form-control::placeholder {
+.form-control-custom::placeholder {
   color: #fff;
+}
+
+.form-control-custom-2 {
+  color: #F3903F;
+  background-color: #FAEBE0;
+  border-color: #FAEBE0;
+  border-width: 2px;
+}
+
+.form-control-custom-2:focus {
+  color: #F3903F;
+  background-color: #FAEBE0;
+  border-color: #F3903F;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control-custom-2::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.form-control-custom-2:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.form-control-custom-2::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.form-control-custom-2::placeholder {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.btn-control-custom-2 {
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #FAEBE0;
+}
+
+.btn-control-custom-2:hover {
+  border-color: #FFDEC6;
 }
 
 .search-suggetion {
@@ -21126,5 +21167,18 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   background-color: #F3903F;
   -webkit-box-shadow: #F3903F;
           box-shadow: #F3903F;
+}
+
+.for-etc {
+  margin-top: 80px;
+  background-image: url(../../img/background.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: calc(100vh - 80px);
+}
+
+.for-form {
+  margin-top: 80px;
 }
 /*# sourceMappingURL=theme.css.map */

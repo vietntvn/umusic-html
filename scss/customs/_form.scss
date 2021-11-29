@@ -8,7 +8,7 @@ $input-placeholder-color: $white;
 $input-box-shadow: #000;
 $input-focus-box-shadow: #000;
 
-.form-control {
+.form-control-custom {
   color: $input-color;
   background-color: $input-bg;
 
@@ -29,6 +29,39 @@ $input-focus-box-shadow: #000;
   // Placeholder
   &::placeholder {
     color: $input-placeholder-color;
+  }
+}
+
+.form-control-custom-2 {
+  color: $color-primary;
+  background-color: $color-second;
+  border-color: $color-second;
+  border-width: 2px;
+  // Customize the `:focus` state to imitate native WebKit styles.
+  &:focus {
+    color: $color-primary;
+    background-color: $color-second;
+    border-color: $color-primary;
+    outline: 0;
+    @if $enable-shadows {
+      box-shadow: none;
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: none;
+    }
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: rgba($black, $alpha: .65);
+  }
+}
+
+.btn-control-custom-2{
+  color: rgba($black, $alpha: .65);
+  background-color: $color-second;
+  &:hover{
+    border-color: #FFDEC6;
   }
 }
 
