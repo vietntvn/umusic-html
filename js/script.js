@@ -1,5 +1,7 @@
 // Call load data menu
 loadDataLeftMenu();
+var linkSong = "song-detail.html";
+var linkSinger = "singer-detail.html";
 
 
 // Call 6 time for load the specific data
@@ -20,6 +22,8 @@ loadDataSmallSong(5, true, "listSongTableBillBoardVN", false);
 loadDataSmallSong(5, true, "listSongTableBillBoardUKS", false);
 loadDataSmallSong(5, true, "listSongTableBillBoardSK", false);
 
+loadDataSmallSongShort(5, "listSongShort");
+
 
 
 
@@ -35,6 +39,8 @@ function loadDataLeftMenu() {
         vipImage = "";
         urlImage = "img/vip.png";
         forModal = "data-bs-toggle='modal' data-bs-target='#modalCreatePlaylist'";
+
+
         for (x = 1; x <= listIcon.length; x++) {
 
             //Set active
@@ -66,7 +72,7 @@ function loadDataLeftMenu() {
 
 // Function binding data song
 function loadDataSong(isLink, isSinger, target, isAnotherKind) {
-    let itemSong, index, flagSigner, hasLink, hasSinger, linkItem, contentItem, selectedItem, flagLink, contentTarget, contentText, contentImage, anotherKind;
+    let itemSong, index, flagSigner, hasLink, hasSinger, linkItem, contentItem, selectedItem, flagLink, contentTarget, contentText, contentImage, anotherKind, targetTo;
 
     itemSong = "";
     hasLink = isLink;
@@ -81,9 +87,10 @@ function loadDataSong(isLink, isSinger, target, isAnotherKind) {
 
             // Check singer
             hasSinger ? flagSigner = "singer-thumb" : "";
+            hasSinger ? targetTo = linkSinger : targetTo = linkSong;
 
             linkItem = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><div class='ratio ratio-1x1'><img src='" + contentImage + "' class='rounded w-100' alt='Product'></div></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='#'>" + contentText + "</a></h6></div>";
+            contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='"+targetTo+"'></a><div class='ratio ratio-1x1'><img src='" + contentImage + "' class='rounded w-100' alt='Product'></div></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='#'>" + contentText + "</a></h6></div>";
 
             selectedItem = "";
             flagLink = "";
@@ -101,10 +108,10 @@ function loadDataSong(isLink, isSinger, target, isAnotherKind) {
                 itemSong += "</div></div>";
             }
         } else {
-            contentText = "MOTIVATION";
+            contentText = "Khúc nhạc vui";
             contentImage = "https://picsum.photos/720/480";
 
-            contentItem = "<div class='product-thumb'><div class='ratio ratio-16x9'><img src='" + contentImage + "' class='rounded w-100' alt='Product'></div><div class='card-img-overlay d-flex justify-content-center align-items-center'><h6 class='mb-0 text-truncate-multi h6 mb-0'><a href='#'>" + contentText + "</a></h6></div></div>"
+            contentItem = "<div class='product-thumb'><div class='ratio ratio-16x9'><img src='" + contentImage + "' class='rounded w-100' alt='Product'></div><a href='"+targetTo+"'class='card-img-overlay d-flex justify-content-center align-items-center'><h6 class='mb-0 text-truncate-multi h6 mb-0'>" + contentText + "</h6></a></div>"
 
             for (index = 1; index <= 12; index++) {
                 itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'><div class='card product-card-alt w-100'>";
@@ -178,11 +185,35 @@ function loadDataSmallSong(totalItem, isBillboard, targetContent, isLongTable) {
             }
 
             itemSongTable += "</div>";
-            itemSongTable += "<div class='u-col col-02'><a href='#'><div class='d-flex align-items-center'><div class='media-img flex-shrink-0'><div class='ratio ratio-1x1'><img src='" + imageContent + "'></div></div><div class='ps-3'><div class='fs-md text-truncate'>" + textContent + "</div><div class='fs-xs'>Như Việt</div></div><span class='vip-lable'>VIP</span></div></a></div>";
+            itemSongTable += "<div class='u-col col-02'><a href='"+linkSong+"'><div class='d-flex align-items-center'><div class='media-img flex-shrink-0'><div class='ratio ratio-1x1'><img src='" + imageContent + "'></div></div><div class='ps-3'><div class='fs-md text-truncate'>" + textContent + "</div><div class='fs-xs'>Như Việt</div></div><span class='vip-lable'>VIP</span></div></a></div>";
             // Check long or short
             if (longTable) {
                 itemSongTable += "<div class='u-col col-03'>04:05</div><div class='u-col col-04'><a class='d-inline-block align-middle' href='#'><i class='ci-u-lyrics size-24'></i></a><a class='d-inline-block align-middle like-toggle mx-2' href='#' " + itemToggle + " data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div>";
             }
+            itemSongTable += "</div>";
+        }
+
+
+        document.getElementById(contentTarget).innerHTML = itemSongTable;
+    }
+}
+
+// Function binding data small song
+function loadDataSmallSongShort(totalItem, targetContent) {
+    let itemSongTable,index, imageContent, textContent, numberItem, contentTarget;
+
+    itemSongTable = "";
+    imageContent = "https://picsum.photos/200";
+    textContent = "Yêu Một Người Gian Dối";
+    numberItem = totalItem;
+    contentTarget = targetContent;
+
+
+    if (document.getElementById(contentTarget)) {
+        for (index = 0; index < numberItem; index++) {
+            itemSongTable += "<div class='d-flex flex-nowrap justify-content-between align-items-center u-row'>";
+            itemSongTable += "<div class='u-col col-02'><a href='"+linkSong+"'><div class='d-flex align-items-center'><div class='media-img flex-shrink-0'><div class='ratio ratio-1x1'><img src='" + imageContent + "'></div></div><div class='ps-3'><div class='fs-md text-truncate'>" + textContent + "</div><div class='fs-xs'>Như Việt</div></div></div></a></div>";
+            itemSongTable += "<div class='u-col col-03'>04:05</div>";
             itemSongTable += "</div>";
         }
 
@@ -208,3 +239,12 @@ function toggleFunction() {
         new SimpleBar(element3);
     }
 }
+
+
+document.getElementById("liveToastBtn").onclick = function() {
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+    var toastList = toastElList.map(function(toastEl) {
+      return new bootstrap.Toast(toastEl)
+    })
+    toastList.forEach(toast => toast.show());
+  }

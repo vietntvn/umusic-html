@@ -161,16 +161,27 @@
     }
 }
 
-
-.billboard-week{
-    background-color: $color-gray-3;
-}
-
 .u-table-short{
     .col-01{
         flex: 0 0 20%;
     }
     .col-02{
         flex: 0 0 80%;
+        text-align: right;
     }
 }
+
+.u-table-short-2{
+    .col-02{
+        flex: 0 0 80%;
+    }
+    .col-03{
+        flex: 0 0 20%;
+        text-align: right;
+    }
+}
+
+.billboard-week{
+    background-color: $color-gray-3;
+}
+

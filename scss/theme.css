@@ -20508,6 +20508,10 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   background-color: #373737;
 }
 
+.bg-gray-2 {
+  background-color: #181818;
+}
+
 .link-color {
   color: #B3B3B3;
 }
@@ -21085,10 +21089,6 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   }
 }
 
-.billboard-week {
-  background-color: #181818;
-}
-
 .u-table-short .col-01 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 20%;
@@ -21099,6 +21099,24 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
   -webkit-box-flex: 0;
       -ms-flex: 0 0 80%;
           flex: 0 0 80%;
+  text-align: right;
+}
+
+.u-table-short-2 .col-02 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+}
+
+.u-table-short-2 .col-03 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  text-align: right;
+}
+
+.billboard-week {
+  background-color: #181818;
 }
 
 .toggle-content .text-content {
