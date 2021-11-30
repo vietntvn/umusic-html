@@ -15361,6 +15361,10 @@ dd {
   content: "\e9fe";
 }
 
+.ci-u-album:before {
+  content: "\e9ff";
+}
+
 .table:not(.table-dark) thead th, .table:not(.table-dark) tbody th {
   color: #fff !important;
 }
@@ -21079,6 +21083,22 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5, h6, .h6, .
         -ms-flex: 0 0 25%;
             flex: 0 0 25%;
   }
+}
+
+.billboard-week {
+  background-color: #181818;
+}
+
+.u-table-short .col-01 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.u-table-short .col-02 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
 }
 
 .toggle-content .text-content {

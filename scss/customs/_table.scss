@@ -160,3 +160,17 @@
         }
     }
 }
+
+
+.billboard-week{
+    background-color: $color-gray-3;
+}
+
+.u-table-short{
+    .col-01{
+        flex: 0 0 20%;
+    }
+    .col-02{
+        flex: 0 0 80%;
+    }
+}

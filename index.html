@@ -182,40 +182,7 @@
           <!-- ====================== MENU LEFT ====================== -->
           <div class="widget widget-links widget-light mb-4 pb-4">
             <!-- List 01 -->
-            <ul id="listMenuLeft" class="widget-list">
-              <script>
-                let itemMenuLeft = "", x, acitveItem;
-                let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
-                let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
-                let listLink = ['index.html', 'individual.html', 'library.html', 'new.html', 'chart.html', 'genre.html', 'playlist.html', 'like.html', 'https://play.google.com/store/apps/details?id=com.spotify.music'];
-                let borderLine = "";
-                let vipImage = "";
-                let urlImage = "img/vip.png";
-                for (x = 1; x <= listIcon.length; x++) {
-
-                  //Set active
-                  x === 1 ? acitveItem = 'active' : acitveItem = '';
-
-                  //Set border
-                  let xx = x % 3;
-                  xx === 0 ? borderLine = "<li class='border-bottom border-light my-2'></li>" : borderLine = '';
-
-                  //Set image
-                  let lastItem = listIcon.length - 1;
-                  x === lastItem ? vipImage = "<li class='my-3'><a href='#'><img src='" + urlImage + "'></a></li>" : vipImage = '';
-
-                  itemMenuLeft += "<li class='widget-list-item " + acitveItem + "'>";
-                  itemMenuLeft += "<a class='widget-list-link' href='" + listLink[x - 1] + "'>";
-                  itemMenuLeft += "<i class='" + listIcon[x - 1] + "  ci-custom me-2'></i>";
-                  itemMenuLeft += "<span class='text-truncate'> " + listContent[x - 1] + " </span>";
-                  itemMenuLeft += "</a>";
-                  itemMenuLeft += "</li>";
-                  itemMenuLeft += vipImage;
-                  itemMenuLeft += borderLine;
-                }
-                document.getElementById("listMenuLeft").innerHTML = itemMenuLeft;
-              </script>
-            </ul>
+            <ul id="listMenuLeft" class="widget-list"></ul>
 
             <!-- List 02 (Only mobile)-->
             <ul class="widget-list d-md-none">
@@ -252,36 +219,6 @@
         <!-- Grid-->
         <div id="listSong01" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong = "", index, flagSigner;
-            let hasLink = true;
-            let hasSinger = false;
-
-            // Check singer
-            hasSinger ? flagSigner = "singer-thumb" : "";
-
-            let linkItem = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem = "<div class='product-thumb " + flagSigner + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem = "";
-            let flagLink = "";
-
-            for (index = 1; index <= 6; index++) {
-              if (!hasLink) {
-                index === 1 ? flagLink = "card-link" : flagLink = "";
-                index === 1 ? selectedItem = linkItem : selectedItem = contentItem;
-              } else {
-                flagLink = "";
-                selectedItem = contentItem;
-              }
-              itemSong += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong += "<div class='card product-card-alt " + flagLink + "'>";
-              itemSong += selectedItem;
-              itemSong += "</div>";
-              itemSong += "</div>";
-            }
-            document.getElementById("listSong01").innerHTML = itemSong;
-          </script>
         </div>
       </div>
 
@@ -297,36 +234,6 @@
         <!-- Grid-->
         <div id="listSong02" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong02 = "", index02, flagSigner02;
-            let hasLink02 = true;
-            let hasSinger02 = false;
-
-            // Check singer
-            hasSinger02 ? flagSigner02 = "singer-thumb" : "";
-
-            let linkItem02 = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem02 = "<div class='product-thumb " + flagSigner02 + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem02 = "";
-            let flagLink02 = "";
-
-            for (index02 = 1; index02 <= 6; index02++) {
-              if (!hasLink02) {
-                index02 === 1 ? flagLink02 = "card-link" : flagLink02 = "";
-                index02 === 1 ? selectedItem02 = linkItem02 : selectedItem02 = contentItem02;
-              } else {
-                flagLink02 = "";
-                selectedItem02 = contentItem02;
-              }
-              itemSong02 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong02 += "<div class='card product-card-alt " + flagLink02 + "'>";
-              itemSong02 += selectedItem02;
-              itemSong02 += "</div>";
-              itemSong02 += "</div>";
-            }
-            document.getElementById("listSong02").innerHTML = itemSong02;
-          </script>
         </div>
       </div>
 
@@ -342,36 +249,6 @@
         <!-- Grid-->
         <div id="listSong03" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong03 = "", index03, flagSigner03;
-            let hasLink03 = true;
-            let hasSinger03 = false;
-
-            // Check singer
-            hasSinger03 ? flagSigner03 = "singer-thumb" : "";
-
-            let linkItem03 = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem03 = "<div class='product-thumb " + flagSigner03 + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem03 = "";
-            let flagLink03 = "";
-
-            for (index03 = 1; index03 <= 6; index03++) {
-              if (!hasLink03) {
-                index03 === 1 ? flagLink03 = "card-link" : flagLink03 = "";
-                index03 === 1 ? selectedItem03 = linkItem03 : selectedItem03 = contentItem03;
-              } else {
-                flagLink03 = "";
-                selectedItem03 = contentItem03;
-              }
-              itemSong03 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong03 += "<div class='card product-card-alt " + flagLink03 + "'>";
-              itemSong03 += selectedItem03;
-              itemSong03 += "</div>";
-              itemSong03 += "</div>";
-            }
-            document.getElementById("listSong03").innerHTML = itemSong03;
-          </script>
         </div>
       </div>
 
@@ -387,36 +264,6 @@
         <!-- Grid-->
         <div id="listSong04" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong04 = "", index04, flagSigner04;
-            let hasLink04 = true;
-            let hasSinger04 = false;
-
-            // Check singer
-            hasSinger04 ? flagSigner04 = "singer-thumb" : "";
-
-            let linkItem04 = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem04 = "<div class='product-thumb " + flagSigner04 + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem04 = "";
-            let flagLink04 = "";
-
-            for (index04 = 1; index04 <= 6; index04++) {
-              if (!hasLink04) {
-                index04 === 1 ? flagLink04 = "card-link" : flagLink04 = "";
-                index04 === 1 ? selectedItem04 = linkItem04 : selectedItem04 = contentItem04;
-              } else {
-                flagLink04 = "";
-                selectedItem04 = contentItem04;
-              }
-              itemSong04 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong04 += "<div class='card product-card-alt " + flagLink04 + "'>";
-              itemSong04 += selectedItem04;
-              itemSong04 += "</div>";
-              itemSong04 += "</div>";
-            }
-            document.getElementById("listSong04").innerHTML = itemSong04;
-          </script>
         </div>
       </div>
 
@@ -432,36 +279,6 @@
         <!-- Grid-->
         <div id="listSong05" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong05 = "", index05, flagSigner05;
-            let hasLink05 = true;
-            let hasSinger05 = false;
-
-            // Check singer
-            hasSinger05 ? flagSigner05 = "singer-thumb" : "";
-
-            let linkItem05 = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem05 = "<div class='product-thumb " + flagSigner05 + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem05 = "";
-            let flagLink05 = "";
-
-            for (index05 = 1; index05 <= 6; index05++) {
-              if (!hasLink05) {
-                index05 === 1 ? flagLink05 = "card-link" : flagLink05 = "";
-                index05 === 1 ? selectedItem05 = linkItem05 : selectedItem05 = contentItem05;
-              } else {
-                flagLink05 = "";
-                selectedItem05 = contentItem05;
-              }
-              itemSong05 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong05 += "<div class='card product-card-alt " + flagLink05 + "'>";
-              itemSong05 += selectedItem05;
-              itemSong05 += "</div>";
-              itemSong05 += "</div>";
-            }
-            document.getElementById("listSong05").innerHTML = itemSong05;
-          </script>
         </div>
       </div>
 
@@ -477,41 +294,52 @@
         <!-- Grid-->
         <div id="listSong06" class="row pt-3 mx-n2 align-items-stretch">
           <!-- Product-->
-          <script>
-            let itemSong06 = "", index06, flagSigner06;
-            let hasLink06 = true;
-            let hasSinger06 = false;
-
-            // Check singer
-            hasSinger06 ? flagSigner06 = "singer-thumb" : "";
-
-            let linkItem06 = "<a href='#' class='d-flex align-items-center justify-content-center w-100'><button type='button' class='btn btn-add rounded-pill btn-icon'><i class='ci-add'></i></button></a>";
-            let contentItem06 = "<div class='product-thumb " + flagSigner06 + "'><div class='position-relative w-100'><div class='product-card-actions'><a class='d-inline-block align-middle like-toggle' href='#' data-bs-toggle='button'><i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a><button type='button' class='btn btn-warning rounded-pill btn-icon mx-3 play-toggle' data-bs-toggle='button'><i class='ci-u-triangle'></i><i class='ci-u-pause-sign'></i></button><a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div><a class='product-thumb-overlay rounded' href='#'></a><img src='https://picsum.photos/seed/picsum/200' class='rounded w-100' alt='Product'></div></div><div class='card-body'><h6 class='product-title mb-0 text-truncate-multi h6'><a href='marketplace-single.html'>Born to Touch Your Feelings: Best of Rock Ballads is a compilation album by German rock band Scorpions a compilation album</a></h6></div>";
-
-            let selectedItem06 = "";
-            let flagLink06 = "";
-
-            for (index06 = 1; index06 <= 6; index06++) {
-              if (!hasLink06) {
-                index06 === 1 ? flagLink06 = "card-link" : flagLink06 = "";
-                index06 === 1 ? selectedItem06 = linkItem06 : selectedItem06 = contentItem06;
-              } else {
-                flagLink06 = "";
-                selectedItem06 = contentItem06;
-              }
-              itemSong06 += "<div class='col-lg-2 col-md-3 col-sm-6 px-2 d-flex'>";
-              itemSong06 += "<div class='card product-card-alt " + flagLink06 + "'>";
-              itemSong06 += selectedItem06;
-              itemSong06 += "</div>";
-              itemSong06 += "</div>";
-            }
-            document.getElementById("listSong06").innerHTML = itemSong06;
-          </script>
         </div>
       </div>
     </section>
   </main>
 
+
+  <!-- Modal markup -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalCreatePlaylist">
+    <div class="modal-dialog modal-dialog-centered modal-md px-md-5" role="document">
+      <div class="modal-content rounded-2 border-0 bg-gray shadow-lg">
+        <div class="modal-body">
+          <div class="">
+            <h2 class="text-center mb-4">Tạo playlist</h2>
+            <!-- Text input -->
+            <div class="input-group input-group-sm mb-3">
+              <input type="text" class="form-control form-control-custom rounded-pill" placeholder="Tên playlist #1">
+            </div>
+            <div class="my-4">
+              <div class="text-light d-flex justify-content-between align-items-center">
+                <span class="fw-bold">Công khai</span>
+                <div class="form-check form-switch form-switch-custom">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                  <label class="form-check-label text-muted fs-smx" for="flexSwitchCheckChecked">Bật</label>
+                </div>
+
+              </div>
+              <p class="text-muted mt-2  fs-smx">Mọi người có thể nhìn thấy playlist này</p>
+            </div>
+            <div class="my-4">
+              <div class="text-light d-flex justify-content-between align-items-center">
+                <span class="fw-bold">Phát ngẫu nhiên</span>
+                <div class="form-check form-switch form-switch-custom">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label text-muted  fs-smx" for="flexSwitchCheckDefault">Tắt</label>
+                </div>
+              </div>
+              <p class="text-muted mt-2  fs-smx">Luôn phát ngẫu nhiên tất cả các bài hát</p>
+            </div>
+            <div>
+              <button type="button" class="btn btn-sm btn-gradient-custom rounded-pill d-block w-100">Đồng ý</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -520,6 +348,8 @@
   <script src="vendor/bootstrap-5-multi-level-dropdown/bootstrap5-dropdown-ml-hack.js"></script>
   <!-- Main theme script-->
   <script src="js/theme.min.js"></script>
+  <!-- Custom js-->
+  <script src="js/script.js"></script>
 </body>
 
 </html>

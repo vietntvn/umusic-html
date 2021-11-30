@@ -469,16 +469,14 @@
                         itemSongTable += "<div class='fs-xs'>Như Việt</div></div>";
                         itemSongTable += "<span class='vip-lable'>VIP</span></div></a></div><div class='u-col col-03'>04:05</div><div class='u-col col-04'>";
                         itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-lyrics size-24'></i></a>";
-                        itemSongTable += "<a class='d-inline-block align-middle like-toggle mx-2' href='#' " + itemToggle + ">";
+                        itemSongTable += "<a class='d-inline-block align-middle like-toggle mx-2' href='#' " + itemToggle + " data-bs-toggle='button'>";
                         itemSongTable += "<i class='ci-u-like-outline size-24'></i><i class='ci-u-like-solid size-24'></i></a>";
                         itemSongTable += "<a class='d-inline-block align-middle' href='#'><i class='ci-u-more size-24'></i></a></div></div>";
                     }
                     document.getElementById("listSongTable").innerHTML = itemSongTable;
                 </script>
-
                 <!-- Item -->
             </div>
-
         </div>
 
         <!-- Header -->
@@ -746,7 +744,7 @@
                     let itemMenuLeft = "", x, acitveItem;
                     let listIcon = ['ci-u-user', 'ci-u-disc', 'ci-u-library', 'ci-u-music', 'ci-u-chart', 'ci-u-genre', 'ci-u-create-playlist', 'ci-u-like-outline', 'ci-u-download'];
                     let listContent = ['Khám phá', 'Cá nhân', 'Thư viện', 'Nhạc mới', 'Xếp hạng', 'Thể loại', 'Tạo playlist', 'Yêu thích', 'Tải app'];
-                    let listLink = ['index.html', 'individual.html', 'library.html', 'new.html', 'chart.html', 'genre.html', 'playlist.html', 'like.html', 'https://play.google.com/store/apps/details?id=com.spotify.music'];
+                    let listLink = ['index.html', 'individual.html', 'library.html', 'new.html', 'billboard.html', 'genre.html', 'playlist.html', 'like.html', 'https://play.google.com/store/apps/details?id=com.spotify.music'];
                     let borderLine = "";
                     let vipImage = "";
                     let urlImage = "img/vip.png";
@@ -806,6 +804,8 @@
     <script src="vendor/bootstrap-5-multi-level-dropdown/bootstrap5-dropdown-ml-hack.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
+    <!-- Custom js-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
