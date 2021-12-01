@@ -1,0 +1,79 @@
+.package-price{
+    background-color: $white;
+    min-height: 440px;
+    .vip-price{
+        font-size: 3.125rem;
+        color: $white;
+        display: none;
+    }
+    .vip-title{
+        color: #7D7D7D;
+        font-size: 2rem;
+    }
+    .borer-separate{
+        border-top: 1px solid rgba($color: $black, $alpha: .1);
+    }
+    .ci-u-approved-signal{
+        display: none;
+    }
+    .ci-u-delete{
+        color: $color-gray-1;
+    }
+    .ci-u-approved-signal, .ci-u-delete{
+        font-size: 1.6rem;
+        vertical-align: middle;
+    }
+}
+
+.package-price.for-vip{
+    background: rgb(255,160,14);
+    background: linear-gradient(180deg, rgba(255,160,14,1) 0%, rgba(254,113,24,1) 100%);    
+    color: $white;
+    .borer-separate{
+        border-top: 1px solid rgba($color: $white, $alpha: .3);
+    }
+    .vip-price{
+        display: block;
+    }
+    .vip-title{
+        color: $white;
+    }
+    .btn{
+        color: $color-primary !important;
+        font-weight: 700;
+    }
+    .list-group-item{
+        color: $white;
+    }
+    .ci-u-delete{
+        display: none;
+    }
+    .ci-u-approved-signal{
+        display: inline-block;
+        color: $white;
+    }
+}
+
+.badge-custom{
+    background: rgb(255,160,14);
+    background: linear-gradient(90deg, rgba(255,160,14,1) 0%, rgba(254,113,24,1) 100%);
+    color: $white;
+    font-weight: 700;
+}
+
+.badge-custom-2{
+    border: 1px solid $color-primary;
+    color: $color-primary;
+}
+
+.badge-custom, .badge-custom-2{
+    font-size: 0.75rem;
+    position: relative;
+    top: -2px;
+    padding: 0.45em 0.825em;
+}
+
+.plan-selected{
+    box-shadow: 0 0.375rem 0.875rem -0.3rem $color-primary;
+    border: 2px solid $color-primary;
+}
